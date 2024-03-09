@@ -1,0 +1,75 @@
+/* *************************************meida**********************************************************  */
+@media (max-width: 800px) {
+  html {
+    font-size: 8px;
+  }
+  .footer_flex {
+    justify-content: center;
+  }
+  .footer_socil_links a {
+    margin: 10px;
+  }
+}
+@media (max-width: 700px) {
+  .nav_links_main {
+    display: flex;
+    padding-top: 100px;
+    flex-direction: column;
+    height: 100vh;
+    gap: 20px;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.432);
+    backdrop-filter: blur(30px);
+    left: -100%;
+    top: 0;
+    transition: 0.5s;
+    z-index: 5;
+    width: 100%;
+  }
+  .navlinks_show {
+    left: 0;
+  }
+  .menu_btn i {
+    display: block;
+  }
+  html {
+    font-size: 7px;
+  }
+  .home_sec_1_flex {
+    flex-direction: column;
+  }
+  .home_sec_1_flex_col1 img {
+    background-image: url("{% static 'images/5bd90a8aef82dc5918248baa_cushion.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    position: -65px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .home_sec_1_flex_col2_main {
+    width: 100%;
+  }
+  .home_sec_1_flex_col2 {
+    background-color: rgb(156, 105, 152);
+    left: 0;
+    right: 0;
+    position: static !important;
+    width: 100%;
+  }
+  .home_Sec_3_flex {
+    flex-direction: column;
+  }
+  .home_Sec_3_col_1 {
+    position: static;
+    margin-right: 0 !important;
+    width: 100%;
+  }
+  .home-sec-3-backimg {
+    height: 500px !important;
+  }
+  .home_section_4_grid {
+    grid-template-columns: 1fr;
+  }
+}
