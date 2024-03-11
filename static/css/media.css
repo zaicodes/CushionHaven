@@ -69,10 +69,18 @@
   .home-sec-3-backimg {
     height: 500px !important;
   }
-  .home_section_4_grid {
+  .home_section_41_grid {
     grid-template-columns: 1fr;
   }
   .products_grid_home {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1fr 1fr;
+  }
+  .section_6_home_grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 400px) {
+  .products_grid_home {
+    grid-template-columns: 1fr;
   }
 }
