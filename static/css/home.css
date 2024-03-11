@@ -161,3 +161,103 @@
 .home_section_4_grid_col .boldpara {
   color: #c9afc6;
 }
+/* ***************************************** */
+/* section 5 */
+/* ******************************************** */
+.section_5_home {
+  padding: 50px 0px;
+}
+.products_grid_home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+
+  text-align: center;
+}
+.products_grid_home_col img {
+  width: 100%;
+  transition: 0.5s;
+}
+.products_grid_home_col:hover img {
+  transform: scale(1.3);
+}
+.products_grid_home_col_img {
+  overflow: hidden;
+}
+.products_grid_home_col .small_heading {
+  margin: 20px 0 10px;
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 24px;
+}
+.products_grid_home_col .product_price_home {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: #b0b0b0;
+}
+
+/* ***************************************** */
+/* section 6 */
+/* ******************************************** */
+.section_6_home {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #c9afc6;
+}
+.section_6_home .container {
+  max-width: 1000px;
+}
+.section_6_home_grid {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr;
+  gap: 80px;
+}
+.section_6_home_grid_col {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+.section_6_home_grid .bold_para {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+}
+.bold_sm_para {
+  color: white;
+  font-size: 23px;
+  font-weight: 600;
+  font-family: "Cormorant Garamond", sans-serif;
+}
+.contact_form {
+  padding: 20px 0;
+}
+.contact_form input,
+.contact_form textarea {
+  width: 100%;
+  border: 1px solid white;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  padding: 20px 10px;
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+}
+.name_inputs {
+  gap: 30px;
+  display: flex;
+  margin: 30px 0px;
+}
+.contact_form textarea {
+  margin: 30px 0px;
+}
+.contact_form input::placeholder,
+.contact_form textarea::placeholder {
+  font-family: Roboto, sans-serif;
+  color: white;
+}
+.contact_form .underline_btn {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 20px;
+}

@@ -72,4 +72,7 @@
   .home_section_4_grid {
     grid-template-columns: 1fr;
   }
+  .products_grid_home {
+    grid-template-columns: 1fr 1fr !important;
+  }
 }
