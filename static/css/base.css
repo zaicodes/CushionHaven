@@ -49,7 +49,11 @@ span {
   color: purple;
   font-size: 20px;
   position: relative;
-  z-index: -1;
+
+  cursor: pointer;
+}
+.cart_btn i {
+  cursor: pointer;
 }
 .cart_btn span {
   background-color: purple;

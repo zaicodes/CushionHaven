@@ -295,3 +295,123 @@
 .flex-wrap img {
   max-width: 100px;
 }
+/* ************************************ */
+/* section cart  */
+/* ************************************ */
+#wrapper {
+  background-color: rgba(0, 0, 0, 0.243);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+}
+.cart_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 480px;
+  padding: 30px;
+}
+.hidden {
+  display: none;
+}
+.cart_heading {
+  display: flex;
+
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #c9afc6;
+}
+.cart_heading .small_heading {
+  margin: 0;
+  font-size: 22px;
+}
+.close_cart_btn {
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+}
+.cart_sec_content {
+  display: flex;
+  gap: 20px;
+}
+.cart_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.cart_grid_flex {
+  display: flex;
+  padding-top: 20px;
+  gap: 20px;
+  justify-content: space-between;
+}
+.cart_grid_flex p {
+  margin: 10px 0;
+}
+.cart_grid_flex img {
+  width: 80px;
+}
+.cart_grid_flex .small_heading {
+  margin: 0;
+  font-size: 20px;
+  font-family: "Cormorant Garamond", sans-serif;
+}
+.cart_item_price {
+  color: #b0b0b0;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+.remove_btn {
+  color: #737373;
+  font-family: Roboto, sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.quantity_input {
+  height: 40px;
+  padding-left: 10px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.109);
+  background-color: #d8d8d8;
+}
+
+.checkout_btn {
+  width: 100%;
+  background-color: #c9afc6;
+  text-align: center;
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: white;
+  font-family: Roboto, sans-serif;
+}
+.cart_sec_total {
+  border-top: 1px solid #5f4d5d;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.total_price {
+  color: #b0b0b0;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+.cart_sec_total .small_heading {
+  color: #c9afc6;
+  margin: 0;
+  font-weight: 100;
+  font-size: 22px;
+}
