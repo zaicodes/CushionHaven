@@ -1,0 +1,184 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001340155",
+      "name": "Floral Velvet Cushion",
+      "description": "Add a touch of elegance to your home with this luxurious floral velvet cushion.",
+      "price": 29.99,
+      "category": 1,
+      "img": "{% static 'images/Floral_Velvet_Cushion_in_pink1.png' %}"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001600425",
+      "name": "Bohemian Tassel Cushion",
+      "description": "Bring boho vibes to your home with this eclectic tassel cushion.",
+      "price": 27.99,
+      "category": 1,
+      "img": "{% static 'images/Bohemian_Tassel_Cushion_in_multi_colours1.png' %}"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001730010",
+      "id": 3,
+      "name": "Embroidered Velvet Cushion",
+      "description": "Elevate your decor with this sumptuous embroidered velvet cushion.",
+      "price": 31.99,
+      "category": 1,
+      "img": "{% static 'images/Embroidered_Velvet_Cushion_in_Navy1.png' %}"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5001890157",
+      "name": "Striped Knit Pillow",
+      "description": "Add cozy charm to your space with this striped knit pillow.",
+      "price": 25.99,
+      "category": 2,
+      "img": "{% static 'images/Striped_Knit_Pillow_in_gray1.png' %}"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002111605",
+      "name": "Geometric Throw Pillow",
+      "description": "Bring modern flair to your living space with this stylish geometric throw pillow.",
+      "price": 24.99,
+      "category": 2,
+      "img": "{% static 'images/Geometric_Throw_Pillow_in_blue1.png' %}"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002260206",
+      "name": "Embroidered Lumbar Pillow",
+      "description": "Add texture and interest to your sofa with this intricately embroidered lumbar pillow.",
+      "price": 34.99,
+      "category": 2,
+      "img": "{% static 'images/Embroidered_Lumbar_Pillow_in_cream1.png' %}"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002440521",
+      "name": "Knit Blanket",
+      "description": "Stay cozy on chilly nights with this soft and warm knit blanket.",
+      "price": 39.99,
+      "category": 3,
+      "img": "{% static 'images/Knit_Blanket_in_gray1.png' %}"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002601115",
+      "id": 8,
+      "name": "Faux Fur Throw",
+      "description": "Stay cozy and chic with this luxurious faux fur throw blanket.",
+      "price": 49.99,
+      "category": 3,
+      "img": "{% static 'images/Faux_Fur_Throw_in_white1.png' %}"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002690715",
+      "name": "Chunky Knit Throw Blanket",
+      "description": "Add warmth and texture to your space with this chunky knit throw blanket.",
+      "price": 42.99,
+      "category": 3,
+      "img": "{% static 'images/Chunky_Knit_Throw_Blanket_in_beige1.png' %}"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002701115",
+      "name": "Textured Woven Blanket",
+      "description": "Wrap yourself in comfort with this textured woven blanket.",
+      "price": 36.99,
+      "category": 3,
+      "img": "{% static 'images/Textured_Woven_Blanket_in_natural1.png' %}"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002761055",
+      "name": "Soft Velvet Cushion",
+      "description": "Sink into luxury with this soft velvet cushion.",
+      "price": 32.99,
+      "category": 1,
+      "img": "{% static 'images/Soft_Velvet_Cushion_in_purple1.png' %}"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002820069",
+      "name": "Knitted Throw Pillow",
+      "description": "Add a cozy touch to your sofa with this knitted throw pillow.",
+      "price": 26.99,
+      "category": 2,
+      "img": "{% static 'images/Knitted_Throw_Pillow_in_green1.png' %}"
+    }
+  },
+  {
+    "pk": 13,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002820147",
+      "name": "Quilted Cushion",
+      "description": "Enhance your comfort with this quilted cushion.",
+      "price": 28.99,
+      "category": 1,
+      "img": "{% static 'images/Quilted_Cushion_in_yellow1.png' %}"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002910572",
+      "name": "Fluffy Throw Blanket",
+      "description": "Wrap yourself in warmth with this fluffy throw blanket.",
+      "price": 45.99,
+      "category": 3,
+      "img": "{% static 'images/Fluffy_Throw_Blanket_in_cream1.png' %}"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "products.product",
+    "fields": {
+      "sku": "pp5002990740",
+      "name": "Embroidered Throw Pillow",
+      "description": "Add a touch of elegance to your space with this embroidered throw pillow.",
+      "price": 29.99,
+      "category": 2,
+      "img": "{% static 'images/Embroidered_Throw_Pillow_in_red1.png' %}"
+    }
+  }
+]

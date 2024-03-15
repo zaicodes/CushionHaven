@@ -1,0 +1,17 @@
+[
+  {
+    "pk": 1,
+    "model": "products.category",
+    "fields": { "name": "cushion", "friendly_name": "cushion" }
+  },
+  {
+    "pk": 2,
+    "model": "products.category",
+    "fields": { "name": "pillow", "friendly_name": "pillow" }
+  },
+  {
+    "pk": 3,
+    "model": "products.category",
+    "fields": { "name": "blanket", "friendly_name": "blanket" }
+  }
+]
