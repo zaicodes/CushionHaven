@@ -8,7 +8,7 @@
       "description": "Add a touch of elegance to your home with this luxurious floral velvet cushion.",
       "price": 29.99,
       "category": 1,
-      "img": "{% static 'images/Floral_Velvet_Cushion_in_pink1.png' %}"
+      "img": "Floral_Velvet_Cushion_in_pink1.png"
     }
   },
   {
@@ -20,7 +20,7 @@
       "description": "Bring boho vibes to your home with this eclectic tassel cushion.",
       "price": 27.99,
       "category": 1,
-      "img": "{% static 'images/Bohemian_Tassel_Cushion_in_multi_colours1.png' %}"
+      "img": "Bohemian_Tassel_Cushion_in_multi_colours1.png"
     }
   },
   {
@@ -33,7 +33,7 @@
       "description": "Elevate your decor with this sumptuous embroidered velvet cushion.",
       "price": 31.99,
       "category": 1,
-      "img": "{% static 'images/Embroidered_Velvet_Cushion_in_Navy1.png' %}"
+      "img": "Embroidered_Velvet_Cushion_in_Navy1.png"
     }
   },
   {
@@ -45,7 +45,7 @@
       "description": "Add cozy charm to your space with this striped knit pillow.",
       "price": 25.99,
       "category": 2,
-      "img": "{% static 'images/Striped_Knit_Pillow_in_gray1.png' %}"
+      "img": "Striped_Knit_Pillow_in_gray1.png"
     }
   },
   {
@@ -57,7 +57,7 @@
       "description": "Bring modern flair to your living space with this stylish geometric throw pillow.",
       "price": 24.99,
       "category": 2,
-      "img": "{% static 'images/Geometric_Throw_Pillow_in_blue1.png' %}"
+      "img": "Geometric_Throw_Pillow_in_blue1.png"
     }
   },
   {
@@ -69,7 +69,7 @@
       "description": "Add texture and interest to your sofa with this intricately embroidered lumbar pillow.",
       "price": 34.99,
       "category": 2,
-      "img": "{% static 'images/Embroidered_Lumbar_Pillow_in_cream1.png' %}"
+      "img": "Embroidered_Lumbar_Pillow_in_cream1.png"
     }
   },
   {
@@ -81,7 +81,7 @@
       "description": "Stay cozy on chilly nights with this soft and warm knit blanket.",
       "price": 39.99,
       "category": 3,
-      "img": "{% static 'images/Knit_Blanket_in_gray1.png' %}"
+      "img": "Knit_Blanket_in_gray1.png"
     }
   },
   {
@@ -94,7 +94,7 @@
       "description": "Stay cozy and chic with this luxurious faux fur throw blanket.",
       "price": 49.99,
       "category": 3,
-      "img": "{% static 'images/Faux_Fur_Throw_in_white1.png' %}"
+      "img": "Faux_Fur_Throw_in_white1.png"
     }
   },
   {
@@ -106,7 +106,7 @@
       "description": "Add warmth and texture to your space with this chunky knit throw blanket.",
       "price": 42.99,
       "category": 3,
-      "img": "{% static 'images/Chunky_Knit_Throw_Blanket_in_beige1.png' %}"
+      "img": "Chunky_Knit_Throw_Blanket_in_beige1.png"
     }
   },
   {
@@ -118,7 +118,7 @@
       "description": "Wrap yourself in comfort with this textured woven blanket.",
       "price": 36.99,
       "category": 3,
-      "img": "{% static 'images/Textured_Woven_Blanket_in_natural1.png' %}"
+      "img": "Textured_Woven_Blanket_in_natural1.png"
     }
   },
   {
@@ -130,7 +130,7 @@
       "description": "Sink into luxury with this soft velvet cushion.",
       "price": 32.99,
       "category": 1,
-      "img": "{% static 'images/Soft_Velvet_Cushion_in_purple1.png' %}"
+      "img": "Soft_Velvet_Cushion_in_purple1.png"
     }
   },
   {
@@ -142,7 +142,7 @@
       "description": "Add a cozy touch to your sofa with this knitted throw pillow.",
       "price": 26.99,
       "category": 2,
-      "img": "{% static 'images/Knitted_Throw_Pillow_in_green1.png' %}"
+      "img": "Knitted_Throw_Pillow_in_green1.png"
     }
   },
   {
@@ -154,7 +154,7 @@
       "description": "Enhance your comfort with this quilted cushion.",
       "price": 28.99,
       "category": 1,
-      "img": "{% static 'images/Quilted_Cushion_in_yellow1.png' %}"
+      "img": "Quilted_Cushion_in_yellow1.png"
     }
   },
   {
@@ -166,7 +166,7 @@
       "description": "Wrap yourself in warmth with this fluffy throw blanket.",
       "price": 45.99,
       "category": 3,
-      "img": "{% static 'images/Fluffy_Throw_Blanket_in_cream1.png' %}"
+      "img": "Fluffy_Throw_Blanket_in_cream1.png"
     }
   },
   {
@@ -178,7 +178,7 @@
       "description": "Add a touch of elegance to your space with this embroidered throw pillow.",
       "price": 29.99,
       "category": 2,
-      "img": "{% static 'images/Embroidered_Throw_Pillow_in_red1.png' %}"
+      "img": "Embroidered_Throw_Pillow_in_red1.png"
     }
   }
 ]
