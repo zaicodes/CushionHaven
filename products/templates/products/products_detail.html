@@ -1,11 +1,28 @@
 {% extends "base.html" %} {% load static %} {% block content %}
-<div>
-  <a href="{{ product.image.url }}" target="_blank">
-    <img src="../../../static/images/{{product.img.url}}" alt="" srcset="" />
-  </a>
-  <h1 class="small_heading_products">{{ product.name }} sdafasdfasdf</h1>
-  <p class="price_alproducts">$ {{ product.price }}</p>
-  <p class="price_alproducts">{{ product.description }}</p>
-  <p class="price_alproducts">{{ product.ratings }}</p>
-</div>
+<section class="product_detail_section">
+  <div class="container">
+    <div class="grid_products_details">
+      <div>
+        <a href="../../../static/images/{{product.img.url}}" target="_blank">
+          <img
+            src="../../../static/images/{{product.img.url}}"
+            alt=""
+            srcset=""
+          />
+        </a>
+      </div>
+      <div class="second_col_products_detail">
+        <h1 class="small_heading_products heading">{{ product.name }}</h1>
+        <p class="price_alproducts small_heading">$ {{ product.price }}</p>
+        <p>quantity</p>
+        <input type="number" />
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-heart"></i>
+        <p class="price_alproducts">{{ product.description }}</p>
+        <p class="price_alproducts">{{ product.ratings }}</p>
+        <a href="#" class="main_btn">Add To Cart</a>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
