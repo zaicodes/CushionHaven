@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div>
+  <a href="{{ product.image.url }}" target="_blank">
+    <img src="../../../static/images/{{product.img.url}}" alt="" srcset="" />
+  </a>
+  <h1 class="small_heading_products">{{ product.name }} sdafasdfasdf</h1>
+  <p class="price_alproducts">$ {{ product.price }}</p>
+  <p class="price_alproducts">{{ product.description }}</p>
+  <p class="price_alproducts">{{ product.ratings }}</p>
+</div>
+{% endblock %}

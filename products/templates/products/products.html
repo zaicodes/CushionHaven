@@ -1,25 +1,26 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
 <div class="section_1_products"><div class="container">Products</div></div>
 
 <div class="container">
   <div class="section_2_products_grid">
-    
-      {% for product in products %}
-      {% if product.img %}
-      <div>
+    {% for product in products %} {% if product.img %}
+    <div>
       <div class="allproducts_img">
-        <img src="../../../static/images/{{product.img.url}}" alt="" srcset="">
+        <a href="{% url 'product_detail' product.id %}">
+          <img
+            src="../../../static/images/{{product.img.url}}"
+            alt=""
+            srcset=""
+          />
+        </a>
       </div>
       <div class="allproducts_desc">
         <h1 class="small_heading_products">{{ product.name }}</h1>
         <p class="price_alproducts">$ {{ product.price }} USD</p>
       </div>
     </div>
-      {% endif %}
-      {% endfor %}
+    {% endif %} {% endfor %}
   </div>
   <section class="section section-7-about">
     <div class="container">
