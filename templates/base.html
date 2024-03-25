@@ -47,6 +47,21 @@
           <div class="navlogo">
             <a href="#">Cushion Haven</a>
           </div>
+          <div>
+            <form method="GET" action="{% url 'products' %}">
+              <input
+                type="text"
+                name="q"
+                placeholder="Search our site"
+                class="navbar_Search"
+              />
+              <button class="search_btn_navbar" type="submit">
+                <span>
+                  <i class="fa-solid fa-magnifying-glass search_icon"></i>
+                </span>
+              </button>
+            </form>
+          </div>
           <div class="nav_links">
             <div class="nav_links_main">
               <a href="{% url 'home' %}">Home</a><a href="">About me</a
@@ -68,6 +83,7 @@
       </div>
     </header>
 
+
     {% if messages %}
     <div class="message-container">
       {% for message in messages %}
@@ -75,6 +91,7 @@
       {% endfor %}
     </div>
     {% endif %}
+
 
     <div class="content">{% block content %}{% endblock %}</div>
     <footer>

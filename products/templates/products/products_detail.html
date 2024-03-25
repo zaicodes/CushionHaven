@@ -13,14 +13,18 @@
       </div>
       <div class="second_col_products_detail">
         <h1 class="small_heading_products heading">{{ product.name }}</h1>
-        <p class="price_alproducts small_heading">$ {{ product.price }}</p>
-        <p>quantity</p>
-        <input type="number" />
-        <i class="fa-regular fa-heart"></i>
-        <i class="fa-solid fa-heart"></i>
-        <p class="price_alproducts">{{ product.description }}</p>
-        <p class="price_alproducts">{{ product.ratings }}</p>
-        <a href="#" class="main_btn">Add To Cart</a>
+        <p class="price_allproducts heading">$ {{ product.price }} USD</p>
+        <p class="allproducts_quantity">quantity</p>
+        <input type="number" value="1" class="allproducts_quantity_input" />
+
+
+        <p class="allproducts_desc para">{{ product.description }}</p>
+        <p class="allproducts_desc para">Rating {{ product.ratings }}</p>
+        <div class="addtocart_heart_main">
+          <a href="#" class="main_btn addtocart">Add To Cart</a>
+          <i class="fa-regular fa-heart heart_btn"></i>
+          <!-- <i class="fa-solid fa-heart"></i> -->
+        </div>
       </div>
     </div>
   </div>

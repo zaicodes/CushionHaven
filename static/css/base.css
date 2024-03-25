@@ -159,3 +159,32 @@ footer {
   color: #5f4d5d;
   margin-bottom: 40px;
 }
+
+
+.navbar_Search {
+  max-width: 250px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  background-color: #c9afc6;
+  color: white;
+  border-radius: 10px;
+}
+.navbar_Search::placeholder {
+  color: white;
+}
+.search_btn_navbar {
+  background-color: black;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 100%;
+}
+.search_icon {
+  color: white;
+}
+
+
