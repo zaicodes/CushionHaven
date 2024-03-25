@@ -5,10 +5,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+
     <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/products.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/productsdetail.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/product.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/productsdetail.css' %}" />
     <link rel="stylesheet" href="{% static 'css/media.css' %}" />
 
     <!-- for bootstrap  -->
@@ -45,7 +46,7 @@
       <div class="container">
         <nav>
           <div class="navlogo">
-            <a href="#">Cushion Haven</a>
+            <a href="{% url 'home' %}">Cushion Haven</a>
           </div>
           <div>
             <form method="GET" action="{% url 'products' %}">
@@ -64,9 +65,49 @@
           </div>
           <div class="nav_links">
             <div class="nav_links_main">
-              <a href="{% url 'home' %}">Home</a><a href="">About me</a
-              ><a href="{% url 'products' %}">Products</a
-              ><a href="">Contact me</a>
+              <a href="{% url 'home' %}">Home</a><a href="">About me</a>
+
+              <span class="prodcuts_hover"
+                >Products
+                <ul class="products_dropdown">
+                  <li class="products_sort">
+                    <span> products</span>
+                     
+                      <ul class="products_dropdown_sorting">
+                        <li>
+                          <a
+                            href="{% url 'products' %}?sort=price&direction=asc"
+                            >price</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="{% url 'products' %}?sort=ratings&direction=desc"
+                            >ratings</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="{% url 'products' %}?sort=category&direction=asc"
+                            >category</a
+                          >
+                        </li>
+                      </ul>
+                    </span>
+                  </li>
+                  <li>
+                    <a href="{% url 'products' %}?category=cushion">cushion</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'products' %}?category=pillow">pillow</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'products' %}?category=blanket">blanket</a>
+                  </li>
+                </ul>
+              </span>
+
+              <a href="">Contact me</a>
             </div>
             <span class="cart_btn">
               <i class="fa-solid fa-cart-shopping"></i>
@@ -83,7 +124,6 @@
       </div>
     </header>
 
-
     {% if messages %}
     <div class="message-container">
       {% for message in messages %}
@@ -91,7 +131,6 @@
       {% endfor %}
     </div>
     {% endif %}
-
 
     <div class="content">{% block content %}{% endblock %}</div>
     <footer>

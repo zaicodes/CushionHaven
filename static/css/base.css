@@ -32,7 +32,8 @@ span {
   display: flex;
   align-items: center;
 }
-.nav_links a {
+.nav_links a,
+.prodcuts_hover {
   padding: 0 20px;
   font-size: 24px;
   font-family: "Cormorant Garamond", serif;
@@ -49,7 +50,6 @@ span {
   color: purple;
   font-size: 20px;
   position: relative;
-
   cursor: pointer;
 }
 .cart_btn i {
@@ -159,8 +159,40 @@ footer {
   color: #5f4d5d;
   margin-bottom: 40px;
 }
-
-
+/* section 7  */
+.section-7-about {
+  padding: 100px 0px;
+  background-color: white;
+}
+.main-div-jewelery-section {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.section-7-about .small_heading {
+  font-size: 25px;
+  color: #c9afc6;
+  margin: 20px 0px;
+}
+.section-7-about .heading {
+  text-align: center;
+  color: #c9afc6;
+}
+.section-7-about .para {
+  font-size: 20px;
+}
+.delivery_img {
+  color: rgb(201, 137, 195);
+  font-size: 8rem;
+}
+.flex-wrap {
+  text-align: center;
+  flex: 1 0 200px;
+}
+.flex-wrap img {
+  max-width: 100px;
+}
 .navbar_Search {
   max-width: 250px;
   padding: 10px;
@@ -186,5 +218,33 @@ footer {
 .search_icon {
   color: white;
 }
+.prodcuts_hover {
+  cursor: pointer;
+  position: relative;
+}
+.products_dropdown {
+  position: absolute;
+  background-color: white;
+  list-style-type: none;
+  padding: 18px 0px;
+  display: none;
+  cursor: pointer;
+  z-index: 1;
+  text-transform: capitalize;
+}
 
+.products_dropdown a {
+  padding: 5px 30px;
+  text-align: center;
+  width: 100%;
+}
 
+.prodcuts_hover:hover .products_dropdown {
+  display: block !important;
+}
+.products_dropdown_sorting {
+  position: absolute;
+  left: 140px;
+  background-color: white;
+  list-style-type: none;
+}
