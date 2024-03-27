@@ -27,7 +27,7 @@ Link to README file []()
 
 ## Validation Testing
 
-### HMTL
+### HTML
 
 ### CSS
 

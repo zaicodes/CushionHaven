@@ -8,36 +8,35 @@ Link to live site: []()
 
 ## CONTENTS
 
-* [User Experience](#user-experience)
- * [User Stories](#user-stories)
+- [User Experience](#User-Experience)
+  - [User Stories](#user-Stories)
 
-* [Design](#design)
- * [Colour Scheme](#colour-scheme)
- * [Typography](#typography)
- * [Layout and Navigation](#layout-and-navigation)
- * [Imagery](#imagery)
- * [Data Model](#data-model)
- * [Security](#security)
+- [Design](#design)
+  - [Colour Scheme](#Colour-Scheme)
+  - [Typography](#Typography)
+  - [Imagery](#Imagery)
+  - [Data Model](#Data-Model)
+  - [Security](#Security)
 
-* [Features](#features)
- * [General features](#general-features)
- * [Accessibility](#accessibility)
- * [Responsiveness](#responsiveness)
- * [Future Implementations](#future-implementations)
+- [Features](#Features)
+  - [General features](#General-Features)
+  - [Accessibility](#Accessibility)
+  - [Responsiveness](#Responsiveness)
+  - [Future Implementations](#Future-Implementations)
 
-* [Technologies used](#technologies-used)
- * [Languages used](#language-used)
- * [Frameworks/Tools Used](#frameworks--tools-used)
+- [Technologies used](#Technologies-Used)
+  - [Languages used](#Languages-Used)
+  - [Frameworks/Tools Used](#Frameworks--Tools-Used)
 
-* [Testing](testing)
+- [Testing](Testing)
 
-* [Deployment](#deployment)
+- [Deployment](#Deployment)
 
-* [Credits](#credits)
- * [Code Used](#code-used)
- * [Content](#content)
- * [Media](media)
- * [Acknowledgments](acknowledgements)
+- [Credits](#Credits)
+  - [Code Used](#Code-used)
+  - [Content](#Content)
+  - [Media](#Media)
+  - [Acknowledgments](#Acknowledgements)
 
  -----
 
@@ -63,7 +62,7 @@ Link to live site: []()
 
 ## Features
 
-### General features
+### General Features
 
 ### Accessibility
 
