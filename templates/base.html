@@ -71,8 +71,17 @@
                 >Products
                 <ul class="products_dropdown">
                   <li class="products_sort">
-                    <span> products</span>
-                     
+                    <div
+                      onmouseenter="arrowhandler()"
+                      onmouseleave="removearrowhandler()"
+                      class="prducts_ratings"
+                    >
+                      products
+                      <i
+                        class="fa-solid fa-arrow-right products_right_arrow"
+                      ></i>
+
+
                       <ul class="products_dropdown_sorting">
                         <li>
                           <a
@@ -93,7 +102,7 @@
                           >
                         </li>
                       </ul>
-                    </span>
+                    </div>
                   </li>
                   <li>
                     <a href="{% url 'products' %}?category=cushion">cushion</a>
@@ -153,6 +162,18 @@
         </div>
       </div>
     </footer>
-    <script src="{% static 'js/script.js' %}"></script>
+    <!-- <script src="{% static 'js/script.js' %}"></script> -->
+    <script>
+      const arrowhandler = function () {
+        document
+          .querySelector(".products_right_arrow")
+          .classList.add("show_right_arrow");
+      };
+      const removearrowhandler = function () {
+        document
+          .querySelector(".products_right_arrow")
+          .classList.remove("show_right_arrow");
+      };
+    </script>
   </body>
 </html>

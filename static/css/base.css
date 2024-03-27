@@ -248,3 +248,17 @@ footer {
   background-color: white;
   list-style-type: none;
 }
+
+.prducts_ratings {
+  padding-top: 20px;
+  text-align: center;
+}
+.products_right_arrow {
+  font-size: 14px;
+  opacity: 0;
+  position: absolute;
+}
+.prducts_ratings:hover .products_dropdown_sorting {
+  display: inline-block !important;
+  opacity: 1 !important;
+}
