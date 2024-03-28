@@ -68,7 +68,13 @@
               <a href="{% url 'home' %}">Home</a><a href="">About me</a>
 
               <span class="prodcuts_hover"
-                >Products
+                ><a
+                  onmouseenter="showdropdown()"
+                  onmouseleave="hidedropdown()"
+                  href="{% url 'products' %}"
+                >
+                  Products</a
+                >
                 <ul class="products_dropdown">
                   <li class="products_sort">
                     <div
@@ -81,7 +87,6 @@
                         class="fa-solid fa-arrow-right products_right_arrow"
                       ></i>
 
-
                       <ul class="products_dropdown_sorting">
                         <li>
                           <a
@@ -89,6 +94,7 @@
                             >price</a
                           >
                         </li>
+
                         <li>
                           <a
                             href="{% url 'products' %}?sort=ratings&direction=desc"
@@ -173,6 +179,12 @@
         document
           .querySelector(".products_right_arrow")
           .classList.remove("show_right_arrow");
+      };
+      const showdropdown = function () {
+        document.querySelector(".products_dropdown").style.display = "block";
+      };
+      const hidedropdown = function () {
+        document.querySelector(".products_dropdown").style.display = "none";
       };
     </script>
   </body>

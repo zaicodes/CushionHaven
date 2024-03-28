@@ -261,40 +261,6 @@
   padding: 20px;
 }
 
-/* section 7  */
-.section-7-about {
-  padding: 100px 0px;
-  background-color: white;
-}
-.main-div-jewelery-section {
-  display: flex;
-  gap: 80px;
-  flex-wrap: wrap;
-  margin-top: 50px;
-}
-.section-7-about .small_heading {
-  font-size: 25px;
-  color: #c9afc6;
-  margin: 20px 0px;
-}
-.section-7-about .heading {
-  text-align: center;
-  color: #c9afc6;
-}
-.section-7-about .para {
-  font-size: 20px;
-}
-.delivery_img {
-  color: rgb(201, 137, 195);
-  font-size: 8rem;
-}
-.flex-wrap {
-  text-align: center;
-  flex: 1 0 200px;
-}
-.flex-wrap img {
-  max-width: 100px;
-}
 /* ************************************ */
 /* section cart  */
 /* ************************************ */

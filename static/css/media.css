@@ -1,4 +1,5 @@
 /* *************************************meida**********************************************************  */
+
 @media (max-width: 800px) {
   html {
     font-size: 8px;
@@ -78,9 +79,15 @@
   .section_6_home_grid {
     grid-template-columns: 1fr !important;
   }
+  .section_2_products_grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (max-width: 400px) {
   .products_grid_home {
+    grid-template-columns: 1fr;
+  }
+  .section_2_products_grid {
     grid-template-columns: 1fr;
   }
 }

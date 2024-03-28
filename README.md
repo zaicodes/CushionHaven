@@ -8,7 +8,7 @@ Link to live site: []()
 
 ## CONTENTS
 
-- [User Experience](#User-Experience)
+- [User Experience](#User-Experience-ux)
   - [User Stories](#user-Stories)
 
 - [Design](#design)
@@ -26,9 +26,9 @@ Link to live site: []()
 
 - [Technologies used](#Technologies-Used)
   - [Languages used](#Languages-Used)
-  - [Frameworks/Tools Used](#Frameworks--Tools-Used)
+  - [Frameworks/Tools Used](#frameworkstools-used)
 
-- [Testing](Testing)
+- [Testing](#Testing)
 
 - [Deployment](#Deployment)
 
@@ -36,7 +36,7 @@ Link to live site: []()
   - [Code Used](#Code-used)
   - [Content](#Content)
   - [Media](#Media)
-  - [Acknowledgments](#Acknowledgements)
+  - [Acknowledgments](#Acknowledgments)
 
  -----
 
@@ -74,9 +74,15 @@ Link to live site: []()
 
 ### Languages Used
 
+- HTML5: is utilized for crafting the markup for the website content. 
+- CSS: is used for styling the individual pages. 
+- JavaScript: is used to toggle the visibility of specific aspects of the site 
+- Python: powers the application's functionality.
+
 ### Frameworks/Tools Used
 
 ## Testing 
+Please consult the [TESTING.md](https://github.com/zaicodes/CushionHaven/blob/main/TESTING.md) document for a comprehensive overview of all conducted tests.
 
 ## Deployment 
 
