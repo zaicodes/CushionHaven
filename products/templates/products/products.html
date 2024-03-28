@@ -1,16 +1,15 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-
 <div class="section_1_products"><div class="container">Products</div></div>
 
-
 <div class="container">
-  {% for c in current_categories%}
+  <!-- {% for c in current_categories%}
   <a href="{% url 'products' %}?category={{c.name}}">
     <span>{{c.friendly_name}}</span>
   </a>
-  {% endfor %}
-  <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+  {% endfor %} -->
+  <div class="sorting_main">
+  <select id="sort-selector" class="sort_dropdown {% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
     <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
     <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
@@ -22,16 +21,13 @@
     <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
 </select>
 
-
-<p>
+<p class="products_main_quantity ">
   {% if search_term or current_categories or current_sorting != 'None_None' %}
   <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
   {% endif %}
 {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
 </p>
-
-
-
+</div>
 
 
 
@@ -55,7 +51,6 @@
           </a>
         </p>
         {% endif %}
-
 
         <h1 class="small_heading_products">{{ product.name }}</h1>
         <p class="price_alproducts">$ {{ product.price }} USD</p>
@@ -98,4 +93,38 @@
     </div>
   </section>
 </div>
+{% endblock %}
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+    
+    <script type="text/javascript">
+   $(document).ready(function() {
+    $('#sort-selector').change(function() {
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+
+        var selectedVal = selector.val();
+        if(selectedVal != "reset"){
+            var sort = selectedVal.split("_")[0];
+            var direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    });
+});
+
+    </script>
 {% endblock %}

@@ -42,3 +42,22 @@
   color: #b0b0b0 !important;
   font-size: 18px;
 }
+.sorting_main {
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.products_main_quantity {
+  font-size: 18px;
+  color: #5f4d5d;
+}
+.products_main_quantity a {
+  color: #b0b0b0;
+  font-size: 22px;
+}
+.sort_dropdown,
+option {
+  border: none;
+  cursor: pointer;
+}
