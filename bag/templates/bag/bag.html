@@ -1,0 +1,89 @@
+{% extends "base.html" %} {% load static %} {% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} {% block content %}
+<div class="container">
+  <hr />
+  <h2 class="heading shopping">Shopping Bag</h2>
+  <hr />
+
+  <div class="">
+    <div class="col">
+      {% if bag_items %}
+      <div>
+        <p class="para">Product Info</p>
+      </div>
+      <div class="shooping_bag_grid">
+        <p></p>
+        <p></p>
+        <p class="allproducts_name para">Price</p>
+        <p class="allproducts_name para">Qty</p>
+        <p class="allproducts_name para">Subtotal</p>
+
+        {% for item in bag_items %}
+
+        <img
+          class="img-fluid rounded"
+          src="../../../static/images/{{item.product.img.url}}"
+        />
+
+        <p class="allproducts_name para">
+          <strong>{{ item.product.name }}</strong>
+        </p>
+        <p class="allproducts_name para">SKU: {{ item.product.sku|upper }}</p>
+
+        <p class="allproducts_name para">${{ item.product.price }}</p>
+
+        <p class="allproducts_name para">{{ item.quantity }}</p>
+
+        {% endfor %}
+
+        <h6 class="allproducts_name para">
+          <strong>Bag Total: ${{ total|floatformat:2 }}</strong>
+        </h6>
+        <h6 class="allproducts_name para">
+          Delivery: ${{ delivery|floatformat:2 }}
+        </h6>
+        <h4 class="allproducts_name para">
+          <strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong>
+        </h4>
+        {% if free_delivery_delta > 0 %}
+        <p class="allproducts_name para">
+          You could get free delivery by spending just
+          <strong>${{ free_delivery_delta }}</strong> more!
+        </p>
+        {% endif %}
+
+        <a
+          href="{% url 'products' %}"
+          class="btn btn-outline-black rounded-0 btn-lg"
+        >
+          <span class="icon">
+            <i class="fas fa-chevron-left"></i>
+          </span>
+          <span class="text-uppercase">Keep Shopping</span>
+        </a>
+        <a href="" class="allproducts_name para">
+          <span class="text-uppercase">Secure Checkout</span>
+          <span class="icon">
+            <i class="fas fa-lock"></i>
+          </span>
+        </a>
+      </div>
+      {% else %}
+      <p class="allproducts_name para">Your bag is empty.</p>
+      <a href="{% url 'products' %}" class="allproducts_name para">
+        <span class="icon">
+          <i class="fas fa-chevron-left"></i>
+        </span>
+        <span class="allproducts_name para">Keep Shopping</span>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

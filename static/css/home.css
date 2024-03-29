@@ -273,6 +273,7 @@
   z-index: 10;
 }
 .cart_main {
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -1,7 +1,12 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 <section class="product_detail_section">
   <div class="container">
-    <div class="grid_products_details">
+    <form
+      class="grid_products_details"
+      action="{% url 'add_to_bag' product.id %}"
+      method="POST"
+    >
+      {% csrf_token %}
       <div>
         <a href="../../../static/images/{{product.img.url}}" target="_blank">
           <img
@@ -15,18 +20,28 @@
         <h1 class="small_heading_products heading">{{ product.name }}</h1>
         <p class="price_allproducts heading">$ {{ product.price }} USD</p>
         <p class="allproducts_quantity">quantity</p>
-        <input type="number" value="1" class="allproducts_quantity_input" />
 
+        <input
+          class="allproducts_quantity_input"
+          type="number"
+          name="quantity"
+          value="1"
+          min="1"
+          max="99"
+          data-item_id="{{ product.id }}"
+          id="id_qty_{{ product.id }}"
+        />
 
         <p class="allproducts_desc para">{{ product.description }}</p>
         <p class="allproducts_desc para">Rating {{ product.ratings }}</p>
         <div class="addtocart_heart_main">
-          <a href="#" class="main_btn addtocart">Add To Cart</a>
+          <input type="submit" class="main_btn addtocart" value="Add to Bag" />
           <i class="fa-regular fa-heart heart_btn"></i>
           <!-- <i class="fa-solid fa-heart"></i> -->
         </div>
+        <input type="hidden" name="redirect_url" value="{{ request.path }}" />
       </div>
-    </div>
+    </form>
   </div>
 </section>
 {% endblock %}

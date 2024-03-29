@@ -61,3 +61,15 @@ option {
   border: none;
   cursor: pointer;
 }
+.btn_fixed_above {
+  position: fixed;
+  padding: 30px;
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  background-color: rgb(161, 161, 161);
+}
+.btn_fixed_above i {
+  font-size: 25px;
+  color: white;
+}
