@@ -1,5 +1,7 @@
 .shopping {
   color: black;
+  font-size: 3rem;
+  padding-top: 40px;
 }
 .shooping_bag_grid {
   display: grid;

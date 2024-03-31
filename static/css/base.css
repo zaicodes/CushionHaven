@@ -48,25 +48,29 @@ span {
 }
 .cart_btn {
   color: purple;
-  font-size: 20px;
+
   position: relative;
   cursor: pointer;
 }
 .cart_btn i {
   cursor: pointer;
+  /* font-size: 17px !important; */
 }
 .cart_btn span {
-  background-color: purple;
-  color: white;
-  border-radius: 50%;
-  width: 20px;
+  /* background-color: purple; */
+  color: purple;
+  font-weight: 900;
+  /* color: white; */
+  /* border-radius: 50%; */
+  /* width: 100px; */
   height: 20px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
   padding-top: 2px;
   font-size: 13px;
   position: absolute;
-  top: -10px;
+  bottom: -18px;
+  left: 10px;
 }
 .login_btn i {
   color: purple;
