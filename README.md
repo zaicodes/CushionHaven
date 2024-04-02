@@ -49,6 +49,10 @@ Link to live site: []()
 
 ### Colour Scheme
 
+![colour-scheme]()
+
+This color scheme combines soft and muted tones (lavender and plum) with a bold accent color (dark cyan) and neutral tones (white and black). The overall effect is a balance of elegance, sophistication, and stability, with a touch of creativity and mystery.
+
 ### Typography
 
 ### Imagery
@@ -80,6 +84,21 @@ Link to live site: []()
 - Python: powers the application's functionality.
 
 ### Frameworks/Tools Used
+
+- Bootstrap: is used to build completely responsive mobile-first websites.
+- JQuery: is a JavaScript library that makes it easier to work with HTML elements, handle events, create animations, and perform AJAX requests on web pages. 
+- Font Awesome: it's used to add icons to the site. We got it by linking to a CDN.
+- Django Allauth: it's used for authentication, registering, and managing accounts on the site.
+- Midjourney: is an artificial intelligence program that was used for creating the images using prompts.
+- Balsamiq: it's used to create wireframes.
+- Favicon.io: it's used to create the favicon.
+- Git: it's used for version control.
+- GitHub: it's where the codebase is hosted.
+- Heroku: it's used as our hosting platform.
+- PostgreSQL: it's used as our hosting platform’s database. 
+- Am I Responsive: to create responsive images of the website on variety of different device sizes.
+- Coolors: to generate the colour palette used for the website. 
+
 
 ## Testing 
 Please consult the [TESTING.md](https://github.com/zaicodes/CushionHaven/blob/main/TESTING.md) document for a comprehensive overview of all conducted tests.
