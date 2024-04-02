@@ -11,6 +11,17 @@
 
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
+@media (max-width: 768px) {
+  .shooping_bag_grid {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 10px;
+    justify-items: center;
+
+    grid-template-columns: 1fr;
+  }
+}
+
 .shooping_bag_grid img {
   width: 100%;
 }
@@ -23,4 +34,8 @@
   font-weight: 400;
   color: #5f4d5d;
   margin-bottom: 40px;
+}
+.update-link,
+.remove-item {
+  cursor: pointer;
 }

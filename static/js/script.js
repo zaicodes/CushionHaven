@@ -1,7 +1,17 @@
 const menubtn = document.querySelector(".menu_btn");
 const navlinksmain = document.querySelector(".nav_links_main");
+const searchbtn = document.querySelector(".search_btn_navbar");
+const navbar_Search = document.querySelector(".navbar_Search");
+const sm_search_btn = document.querySelector(".sm_search_btn");
+searchbtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  navbar_Search.classList.add("navbar_Search_show");
+  sm_search_btn.classList.add("sm_search_btn_show");
+});
 
-///////////////// menu btn funciotnlaity
+////////////
+
+///// menu btn funciotnlaity
 menubtn.addEventListener("click", function () {
   navlinksmain.classList.toggle("navlinks_show");
 });

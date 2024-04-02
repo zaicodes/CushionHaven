@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% load static %} {% block page_header %}
+{% extends "base.html" %} {% load static %} {% load bag_tools %} {% block page_header %}
 <div class="container header-container">
   <div class="row">
     <div class="col"></div>
@@ -11,27 +11,27 @@
   <hr />
 
   <div class="">
-    <div class="col">
+    <div class="col-12">
       {% if bag_items %}
       <div>
         <p class="para">Product Info</p>
       </div>
-      <div class="shooping_bag_grid">
-        <p></p>
-        <p></p>
-        <p class="allproducts_name para">Price</p>
-        <p class="allproducts_name para">Qty</p>
-        <p class="allproducts_name para">Subtotal</p>
+      <div class="shooping_bag_grid ">
+        <p class="d-md-block d-none"></p>
+        <p class="d-md-block d-none"></p>
+        <p class="allproducts_name d-md-block d-none para">Price</p>
+        <p class="allproducts_name d-md-block d-none para">Qty</p>
+        <p class="allproducts_name d-md-block d-none para">Subtotal</p>
 
         {% for item in bag_items %}
 
         <img
-          class="img-fluid rounded"
+          class="img-fluid rounded p-5 p-md-1"
           src="../../../static/images/{{item.product.img.url}}"
         />
 
         <p class="allproducts_name para">
-          <strong
+          <strong class="fs-md-1 "
             >{{ item.product.name }}
             <br />
             {{ item.product.sku|upper }}
@@ -39,26 +39,26 @@
         </p>
 
         <p class="allproducts_name para">${{ item.product.price }}</p>
-
+     <div>
         <p class="allproducts_name para">
           <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
             {% csrf_token %}
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
+                        <button class="decrement-qty btn btn-sm btn-black py-3 fs-3 rounded-0" 
                             data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                             <span>
                                 <i class="fas fa-minus fa-sm"></i>
                             </span>
                         </button>
-                    </div>
-                    <input class="form-control form-control-sm qty_input" type="number"
+                    </div> 
+                    <input class="form-control form-control-sm qty_input p-2 fs-2" type="number"
                         name="quantity" value="{{ item.quantity }}" min="1" max="99"
                         data-item_id="{{ item.item_id }}"
                         id="id_qty_{{ item.item_id }}">
                     <div class="input-group-append">
-                        <button class="increment-qty btn btn-sm btn-black rounded-0"
+                        <button class="increment-qty btn btn-sm py-3 fs-3 btn-black rounded-0"
                             data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                             <span>
                                 <i class="fas fa-plus fa-sm"></i>
@@ -70,17 +70,22 @@
                     {% endif %}
                 </div>
             </div>
+        
         </form>
-        <a class="update-link text-info"><small>Update</small></a>
-        <a class="remove-item text-danger float-right" data-size="{{item.size}}" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+        <a class="update-link text-info"><small class="fs-4 px-3">Update</small></a>
+        <a class="remove-item text-danger float-right" data-size="{{item.size}}" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small class="fs-4 px-3">Remove</small></a>
+      
+   
+    
         </p>
+      </div>
 
-        <p class="allproducts_name para">${{ item.product.price }}</p>
+      <p class="allproducts_name d-md-block d-none para para">${{ item.product.price | calc_subtotal:item.quantity }}</p>
 
         {% endfor %}
 
-        <h6 class="allproducts_name para">
-          <strong>Bag Total: ${{ total|floatformat:2 }}</strong>
+        <h6 class="allproducts_name m-5 p-5 p-md-0 m-md-0 para">
+          <strong class="">Bag Total: ${{ total|floatformat:2 }}</strong>
         </h6>
         <h6 class="allproducts_name para">
           Delivery: ${{ delivery|floatformat:2 }}
@@ -102,9 +107,9 @@
           <span class="icon">
             <i class="fas fa-chevron-left"></i>
           </span>
-          <span class="text-uppercase">Keep Shopping</span>
+          <span class="text-uppercase fs-3">Keep Shopping</span>
         </a>
-        <a href="" class="allproducts_name para">
+        <a href="" class="allproducts_name   para">
           <span class="text-uppercase">Secure Checkout</span>
           <span class="icon">
             <i class="fas fa-lock"></i>
@@ -117,7 +122,7 @@
         <span class="icon">
           <i class="fas fa-chevron-left"></i>
         </span>
-        <span class="allproducts_name para">Keep Shopping</span>
+        <span class="allproducts_name fs-1 para ">Keep Shopping</span>
       </a>
       {% endif %}
     </div>
