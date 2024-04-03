@@ -279,3 +279,16 @@ footer {
 .show_right_arrow {
   opacity: 1;
 }
+/* toasts  */
+.message-container {
+  position: fixed;
+  top: 72px;
+  right: 15px;
+  z-index: 9;
+}
+.custom_toast {
+  overflow: visible;
+}
+.toast-capper {
+  height: 2px;
+}

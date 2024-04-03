@@ -6,10 +6,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- jquer tag  -->
+    <!-- jquery tag  -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/e9c73d7092.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
       crossorigin="anonymous"
     ></script>
     <!-- bootstrap links  -->
@@ -170,16 +184,43 @@
       </div>
     </header>
 
+    {% if messages %}
+    <div class="message-container">
+      {% for message in messages %} {% with message.level as level %}
+      <div
+        class="toast custom-toast rounded-0 border-top-0"
+        data-autohide="false"
+      >
+        <div
+          class="arrow-up {% if level == 40 %} arrow-danger {% elif level == 30 %} arrow-warning {% elif level == 25 %} arrow-success {% else %} arrow-info {% endif %}"
+        ></div>
+        <div
+          class="w-100 toast-capper {% if level == 40 %} bg-danger {% elif level == 30 %} bg-warning {% elif level == 25 %} bg-success {% else %} bg-info {% endif %}"
+        ></div>
+        <div class="toast-header bg-white text-dark">
+          <strong class="mr-auto fs-3"
+            >{% if level == 40 %} Error! {% elif level == 30 %} Warning! {% elif
+            level == 25 %} Success! {% else %} Alert! {% endif %}</strong
+          >
+          <button
+            type="button"
+            class="ml-2 mb-1 close text-dark"
+            data-dismiss="toast"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body fs-3 bg-white">{{ message }}</div>
+      </div>
+      {% endwith %} {% endfor %}
+    </div>
+    {% endif %}
+
     <!-- *********************************** -->
     <!-- other pages content  -->
     <!-- ************************************* -->
-    {% if messages %}
-    <div class="message-container">
-      {% for message in messages %}
-      <p>{{ message }}</p>
-      {% endfor %}
-    </div>
-    {% endif %}
+
     <!-- *********************************** -->
     <!-- footer  -->
     <!-- ********************************** -->
@@ -233,6 +274,13 @@
 
         $.post(url, data).done(function () {
           location.reload();
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        var toastElements = document.querySelectorAll(".toast");
+        toastElements.forEach(function (toastElement) {
+          var toast = new bootstrap.Toast(toastElement);
+          toast.show();
         });
       });
     </script>
