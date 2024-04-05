@@ -39,7 +39,7 @@
 
 /* section 2  */
 
-.home_seciton_2 {
+.home_section_2 {
   padding: 50px 0px;
   text-align: center;
 }
@@ -47,7 +47,6 @@
   font-family: "Cormorant Garamond", sans-serif;
   font-weight: 500;
   font-size: 26px;
-  line-height: 38px;
   color: #5f4d5d;
 }
 .home_sec_2_flex {
@@ -179,17 +178,18 @@
 .products_grid_home_col_img {
   overflow: hidden;
 }
-.products_grid_home_col .small_heading {
+.products_grid_home_col .small_heading a{
   margin: 20px 0 10px;
   font-family: "Cormorant Garamond", sans-serif;
-  font-size: 24px;
+  color: #675a7d;
+  font-size: 18px;
 }
 
 /* section 6 */
 
 .section_6_home {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   background-color: #c9afc6;
 }
 .section_6_home .container {
@@ -197,17 +197,18 @@
 }
 .section_6_home_grid {
   display: grid;
-  grid-template-columns: 0.5fr 2fr;
+  grid-template-columns:1.2fr 2fr;
   gap: 80px;
 }
 .section_6_home_grid_col {
   display: flex;
-  gap: 30px;
+  gap: 50px;
   flex-direction: column;
 }
 .section_6_home_grid .bold_para {
   color: #016274;
   font-size: 14px;
+  margin: 0;
   font-weight: 700;
   font-family: Roboto, sans-serif;
   text-transform: uppercase;
@@ -215,12 +216,11 @@
 .bold_sm_para {
   color: white;
   font-size: 23px;
+  margin: 0;
   font-weight: 600;
   font-family: "Cormorant Garamond", sans-serif;
 }
-.contact_form {
-  padding: 20px 0;
-}
+
 .contact_form input,
 .contact_form textarea {
   width: 100%;

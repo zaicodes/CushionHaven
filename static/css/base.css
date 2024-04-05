@@ -216,20 +216,21 @@ footer {
   margin-top: 50px;
 }
 .section-7-about .small_heading {
-  font-size: 25px;
+  font-size: 18px;
   color: #c9afc6;
   margin: 20px 0px;
 }
 .section-7-about .heading {
   text-align: center;
   color: #c9afc6;
+  font-size: 3rem;
 }
 .section-7-about .para {
-  font-size: 20px;
+  font-size: 18px;
 }
 .delivery_img {
   color: rgb(201, 137, 195);
-  font-size: 8rem;
+  font-size: 5rem;
 }
 .flex-wrap {
   text-align: center;
