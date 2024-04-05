@@ -81,7 +81,17 @@ This color scheme combines soft and muted tones (lavender and plum) with a bold 
 
 ### Typography
 
+The fonts used for this project are: Lobster, Cormorant Garamond and Roboto.
+
+Lobster: Lobster is a script typeface known for its elegant and flowing cursive style. It exudes a sense of sophistication and was used for decorative purposes for the logo.
+
+Cormorant Garamond: Cormorant Garamond is a classic serif typeface inspired by the timeless elegance of traditional Garamond fonts. It offers a balance of refinement and readability, making it suitable for body text and headings alike.
+
+Roboto: Roboto is a modern sans-serif typeface designed for digital interfaces. Its clean and versatile appearance, along with excellent legibility, makes it a popular choice for web and mobile applications, as well as for body text on websites.
+
 ### Imagery
+
+All website images are generated using Midjourney, focusing on products and color schemes against a white background to enhance the vibrancy of colours.The icons are from Font Awesome.
 
 ### Wireframes
 
@@ -89,14 +99,32 @@ This color scheme combines soft and muted tones (lavender and plum) with a bold 
 
 ### Security
 
+Various security measures were implemented for this project:
+
+- Use of .env file: Sensitive credentials like DATABASE_URL, SECRET_KEY, STRIPE keys, AWS ACCESS KEYS, and GMAIL passwords are stored in a .env file, which is then added to .gitignore to keep it secure. 
+
+- Defensive Programming: The site includes measures to prevent unauthorized actions by users. For instance, only superusers can access the product admin panel. Users must be authenticated to access the profile page and cannot add reviews without authorization.
+
+- Feedback to Users: Toast messages provide instant feedback to users about their actions, such as successful login or reasons for authentication failure.
 
 ## Features
 
 ### General Features
 
+
+
 ### Accessibility
 
+I've been careful while coding to make sure the website is accessible-friendly. Here's how I've achieved that:
+
+- I've used semantic HTML.
+- I've included descriptive alt attributes on images.
+- Information is provided for screen readers where icons are used without text.
+- I've made sure there's enough contrast between colours across the site (details on colour choices can be found in the color scheme section).
+
 ### Responsiveness
+
+The website's responsiveness across diverse screen sizes and browsers is achieved through the utilization of media queries and Bootstrap. These tools enable seamless adaptation of layout and functionality, ensuring a consistent and user-friendly experience across different devices and browsing environments.
 
 ### Future Implementations
 
@@ -131,12 +159,28 @@ Please consult the [TESTING.md](https://github.com/zaicodes/CushionHaven/blob/ma
 
 ## Deployment 
 
+
 ## Credits
 
 ### Code Used
 
+The project code is sourced from the following:
+
+- Code Institute's Boutique Ado walkthrough project
+- Django documentation
+- Stripe Documentation
+
 ### Content
 
+I authored the content of the website, drawing inspiration from the design of this particular website [here](https://mariela.webflow.io/)
+
 ### Media
+All the images have been generated using Midjourney's prompts, refer to Imagery above for more details.
 
 ### Acknowledgments
+
+I want to give a big thanks to those who helped me a lot with my project:
+
+Narender S. - my mentor, who checked on my progress and gave me useful feedback.
+
+Jessica I. - for the weekly stand-up meetings that were really helpful and informative.
