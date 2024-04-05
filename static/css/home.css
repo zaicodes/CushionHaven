@@ -1,4 +1,3 @@
-
 /* Section 1 */
 
 .home_section_1 {
@@ -22,9 +21,9 @@
   width: 10%;
 }
 .home_sec_1_flex_col2 {
+  position: absolute;
   background-color: rgb(156, 105, 152);
-  position: relative;
-  left: -250px;
+  right: 0px;
   top: 20%;
   width: 400px;
   padding: 50px;
@@ -94,15 +93,12 @@
   background-color: #c9afc6;
   padding: 50px 0;
 }
-.home_section_3 .container {
-  max-width: 900px;
-}
 
 .home-sec-3-backimg {
-  width: 100%;
-  height: 700px;
+  width: 700px;
+  height: 400px;
   background-size: cover;
-  background-position: center;
+  background-position: top right;
   background-repeat: no-repeat;
   background-image: url("../images/about-designer1.png");
 }
@@ -113,17 +109,19 @@
 .home_Sec_3_col_1 .heading {
   font-family: "Cormorant Garamond", sans-serif;
 }
-
+.home_Sec_3_bold_para {
+  max-width: 600px;
+  color: white;
+  font-size: 18px;
+}
 .home_Sec_3_col_1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: rgb(176, 142, 173);
   color: white;
-  position: relative;
   z-index: 1;
   padding: 30px;
-  margin-right: -100px;
   min-height: 400px;
 }
 

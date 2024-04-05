@@ -106,16 +106,18 @@
   .home_Sec_3_flex {
     flex-direction: column;
   }
+
   .home_Sec_3_col_1 {
     position: static;
     margin-right: 0 !important;
     width: 100%;
   }
+
   .home-sec-3-backimg {
     height: 500px !important;
   }
-  .home_section_41_grid {
-    grid-template-columns: 1fr;
+  .home_section_4_grid {
+    grid-template-columns: 1fr !important;
   }
   .products_grid_home {
     grid-template-columns: 1fr 1fr;
@@ -125,6 +127,9 @@
   }
   .section_2_products_grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .home-sec-3-backimg {
+    width: 100% !important;
   }
 }
 @media (max-width: 400px) {

@@ -185,6 +185,10 @@ footer {
   padding-bottom: 10px;
   border-bottom: 1px solid white;
 }
+.underline_btn:hover {
+  color: #800080;
+  border-bottom: 1px solid #800080;
+}
 .boldpara {
   font-family: Roboto, sans-serif;
   font-size: 14px;

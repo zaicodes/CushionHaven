@@ -9,7 +9,7 @@
         />
       </div>
       <div class="home_sec_1_flex_col2_main">
-        <div class="home_sec_1_flex_col2">
+        <div class="home_sec_1_flex_col2 ">
           <p>New</p>
           <h2 class="heading">Spring Collection 2024</h2>
           <a href="{% url 'products' %}" class="underline_btn">Buy Now</a>
@@ -20,7 +20,7 @@
 </section>
 <section class="home_seciton_2">
   <div class="container">
-    <h2 class="small_heading">Learn More About Cushion Haven!</h2>
+    <h2 class="small_heading text-start">Learn More About Cushion Haven!</h2>
 
     <div class="home_sec_2_flex">
       <div class="home_sec_2_flex_col">
@@ -32,7 +32,7 @@
         </div>
         <div class="home_sec_2_flex_content">
           <h2 class="small_heading">About me</h2>
-          <p>Learn more</p>
+          <p><a href="#home_section3" class="underline_btn">Learn more</a></p>
         </div>
       </div>
       <div class="home_sec_2_flex_col">
@@ -44,7 +44,7 @@
         </div>
         <div class="home_sec_2_flex_content">
           <h2 class="small_heading">About collection</h2>
-          <p>Learn more</p>
+          <p><a href="#home_section4" class="underline_btn">Learn more</a></p>
         </div>
       </div>
       <div class="home_sec_2_flex_col">
@@ -56,19 +56,19 @@
         </div>
         <div class="home_sec_2_flex_content">
           <h2 class="small_heading">About products</h2>
-          <p>Learn more</p>
+          <p><a href="#home_section5" class="underline_btn">Learn more</a></p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="home_section_3">
+<section id="home_section3" class="home_section_3">
   <div class="container">
-    <div class="home_Sec_3_flex">
+    <di v class="home_Sec_3_flex">
       <div class="home_Sec_3_col_1">
         <p class="boldpara">About me</p>
         <h2 class="heading">I'm a trendy Cushion Designer</h2>
-        <p class="bold_para">
+        <p class="bold_para home_Sec_3_bold_para">
           I'm a designer specializing in cushions, pillows, and blankets, based in London. 
           My collection features luxurious fabrics, intricate designs, and vibrant colors, 
           creating pieces that elevate home decor with elegance and comfort.
@@ -79,7 +79,7 @@
     </div>
   </div>
 </section>
-<section class="home_section_4">
+<section id="home_section4" class="home_section_4">
   <div class="container">
     <div class="home_section_4_grid">
       <div class="home_section_4_grid_col">
@@ -134,38 +134,46 @@
     </div>
   </div>
 </section>
-<section class="section_5_home">
+<section id="home_section5" class="section_5_home">
   <div class="container">
     <p class="section_5_heading">Shop by Category!</p>
     <div class="products_grid_home">
       <div class="products_grid_home_col">
         <div class="products_grid_home_col_img">
-          <img
+          <a href="{% url 'products' %}?category=cushion ">   <img
             src="{% static 'images/cushions.jpeg' %}"
             alt="Example Image"
-          />
+          /></a>
+       
         </div>
-        <h1 class="small_heading">Cushions</h1>
+       
+        <h1 class="small_heading"> <a class="text-info" href="{% url 'products' %}?category=cushion">cushion</a></h1>
       </div>
       <div class="products_grid_home_col">
         <div class="products_grid_home_col_img">
-          <img
-            src="{% static 'images/blankets.jpeg' %}"
-            alt="Example Image"
-          />
-        </div>
-        <h1 class="small_heading">Blankets</h1>
-      </div>
-      <div class="products_grid_home_col">
-        <div class="products_grid_home_col_img">
-          <img
-            src="{% static 'images/pillows.jpeg' %}"
-            alt="Example Image"
-          />
-        </div>
-        <h1 class="small_heading">Pillows</h1>
+          <div class="products_grid_home_col_img">
+            <a href="{% url 'products' %}?category=blanket">   <img
+              src="{% static 'images/blankets.jpeg' %}"
+              alt="Example Image"
+            /></a>
+         
+          </div>
+         
+          <h1 class="small_heading"> <a class="text-info" href="{% url 'products' %}?category=blanket">blanket</a></h1>
       </div>
     </div>
+      <div class="products_grid_home_col">
+        <div class="products_grid_home_col_img">
+          <a href="{% url 'products' %}?category=pillow">   <img
+            src="{% static 'images/pillows.jpeg' %}"
+            alt="Example Image"
+          /></a>
+       
+        </div>
+       
+        <h1 class="small_heading"> <a class="text-info" href="{% url 'products' %}?category=pillow">pillow</a></h1>
+      </div>
+ 
   </div>
 </section>
 <section class="section_6_home">
