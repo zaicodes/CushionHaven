@@ -70,9 +70,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- for font family  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -113,7 +116,8 @@
           </div>
           <div class="nav_links">
             <div class="nav_links_main">
-              <a href="{% url 'home' %}">Home</a><a href="/#homesection2">About me</a>
+              <a href="{% url 'home' %}">Home</a
+              ><a href="/#homesection2">About me</a>
 
               <span class="prodcuts_hover"
                 ><a
@@ -192,36 +196,21 @@
 
     {% if messages %}
     <div class="message-container">
-      {% for message in messages %} {% with message.level as level %}
-      <div
-        class="toast custom-toast rounded-0 border-top-0"
-        data-autohide="false"
-      >
-        <div
-          class="arrow-up {% if level == 40 %} arrow-danger {% elif level == 30 %} arrow-warning {% elif level == 25 %} arrow-success {% else %} arrow-info {% endif %}"
-        ></div>
-        <div
-          class="w-100 toast-capper {% if level == 40 %} bg-danger {% elif level == 30 %} bg-warning {% elif level == 25 %} bg-success {% else %} bg-info {% endif %}"
-        ></div>
-        <div class="toast-header bg-white text-dark">
-          <strong class="mr-auto fs-3"
-            >{% if level == 40 %} Error! {% elif level == 30 %} Warning! {% elif
-            level == 25 %} Success! {% else %} Alert! {% endif %}</strong
-          >
-          <button
-            type="button"
-            class="ml-2 mb-1 close text-dark"
-            data-dismiss="toast"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="toast-body fs-3 bg-white">{{ message }}</div>
-      </div>
-      {% endwith %} {% endfor %}
+        {% for message in messages %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/toasts/toast_error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/toasts/toast_warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/toasts/toast_success.html' %}
+                {% else %}
+                    {% include 'includes/toasts/toast_info.html' %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
     </div>
-    {% endif %}
+{% endif %}
 
     <!-- *********************************** -->
     <!-- other pages content  -->
@@ -289,7 +278,6 @@
           toast.show();
         });
       });
-
     </script>
   </body>
 </html>

@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'checkout',
+    "crispy_bootstrap5",
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +60,7 @@ MIDDLEWARE = [
 
 ]
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 ROOT_URLCONF = 'cushionhaven.urls'
 
 TEMPLATES = [
@@ -76,8 +78,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                "bag.contexts.bag_contents",
+                'django.template.context_processors.media',
+                'bag.contexts.bag_contents',
             ],
+            "builtins": [
+                "crispy_forms.templatetags.crispy_forms_tags",
+                "crispy_forms.templatetags.crispy_forms_field"
+            ]
+
         },
     },
 ]
