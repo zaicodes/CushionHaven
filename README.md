@@ -95,6 +95,8 @@ All website images are generated using Midjourney, focusing on products and colo
 
 ### Wireframes
 
+For wireframes, please refer to the documentation [wireframes](https://github.com/zaicodes/CushionHaven/tree/main/documentation/wireframes)
+
 ### Data Model
 
 ### Security
