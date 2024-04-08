@@ -3,6 +3,7 @@ const navlinksmain = document.querySelector(".nav_links_main");
 const searchbtn = document.querySelector(".search_btn_navbar");
 const navbar_Search = document.querySelector(".navbar_Search");
 const sm_search_btn = document.querySelector(".sm_search_btn");
+const small_link = document.querySelectorAll(".small_link")
 searchbtn.addEventListener("click", function (e) {
   e.preventDefault();
   navbar_Search.classList.add("navbar_Search_show");
@@ -14,6 +15,11 @@ searchbtn.addEventListener("click", function (e) {
 ///// menu btn funciotnlaity
 menubtn.addEventListener("click", function () {
   navlinksmain.classList.toggle("navlinks_show");
+});
+small_link.forEach(element => {
+  element.addEventListener("click" , function (){
+    navlinksmain.classList.toggle("navlinks_show");
+  })
 });
 
 /////////////////// handling the increment and decremetn buttons

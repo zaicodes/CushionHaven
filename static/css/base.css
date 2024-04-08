@@ -459,3 +459,7 @@ a.category-badge > span.badge:hover {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.hidden{
+  display: none;
+}

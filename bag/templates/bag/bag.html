@@ -1,3 +1,4 @@
+
 {% extends "base.html" %} {% load static %} {% load bag_tools %} {% block page_header %}
 <div class="container header-container">
   <div class="row">
@@ -9,6 +10,7 @@
   <hr />
   <h2 class="heading shopping">Shopping Bag</h2>
   <hr />
+
 
   <div class="">
     <div class="col-12">
@@ -23,12 +25,15 @@
         <p class="allproducts_name d-md-block d-none para">Qty</p>
         <p class="allproducts_name d-md-block d-none para">Subtotal</p>
 
+
         {% for item in bag_items %}
+
 
         <img
           class="img-fluid rounded p-5 p-md-1"
           src="../../../static/images/{{item.product.img.url}}"
         />
+
 
         <p class="allproducts_name para">
           <strong class="fs-md-1 "
@@ -38,6 +43,7 @@
           </strong>
         </p>
 
+
         <p class="allproducts_name para">${{ item.product.price }}</p>
      <div>
         <p class="allproducts_name para">
@@ -46,13 +52,13 @@
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <button class="decrement-qty btn btn-sm btn-black py-3 fs-3 rounded-0" 
+                        <button class="decrement-qty btn btn-sm btn-black py-3 fs-3 rounded-0"
                             data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                             <span>
                                 <i class="fas fa-minus fa-sm"></i>
                             </span>
                         </button>
-                    </div> 
+                    </div>
                     <input class="form-control form-control-sm qty_input p-2 fs-2" type="number"
                         name="quantity" value="{{ item.quantity }}" min="1" max="99"
                         data-item_id="{{ item.item_id }}"
@@ -70,19 +76,22 @@
                     {% endif %}
                 </div>
             </div>
-        
+       
         </form>
         <a class="update-link text-info"><small class="fs-4 px-3">Update</small></a>
         <a class="remove-item text-danger float-right" data-size="{{item.size}}" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small class="fs-4 px-3">Remove</small></a>
-      
+     
    
-    
+   
         </p>
       </div>
 
+
       <p class="allproducts_name d-md-block d-none para para">${{ item.product.price | calc_subtotal:item.quantity }}</p>
 
+
         {% endfor %}
+
 
         <h6 class="allproducts_name m-5 p-5 p-md-0 m-md-0 para">
           <strong class="">Bag Total: ${{ total|floatformat:2 }}</strong>
@@ -100,9 +109,10 @@
         </p>
         {% endif %}
 
+
         <a
           href="{% url 'products' %}"
-          class="btn btn-outline-black rounded-0 btn-lg"
+          class="btn btn-outline-black rounded-0 btn-lg border-0"
         >
           <span class="icon">
             <i class="fas fa-chevron-left"></i>
@@ -133,6 +143,7 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
+
 <script type="text/javascript">
   console.log("dafasdfasdfta")
     // Update quantity on click
@@ -141,6 +152,7 @@
         form.submit();
     })
 
+
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
@@ -148,6 +160,7 @@
         var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
 
         $.post(url, data)
          .done(function() {
