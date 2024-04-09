@@ -31,7 +31,7 @@ function handleEnableDisable(itemId) {
   $(`#decrement-qty_${itemId}`).prop("disabled", minusDisabled);
   $(`#increment-qty_${itemId}`).prop("disabled", plusDisabled);
 }
-console.log("sadfsafsafsd");
+
 
 var allQtyInputs = $(".qty_input");
 for (var i = 0; i < allQtyInputs.length; i++) {
@@ -95,4 +95,4 @@ $(".update-link").click(function (e) {
   form.submit();
 });
 
-// for stripe payments 
+
