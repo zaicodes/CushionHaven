@@ -22,6 +22,18 @@ small_link.forEach(element => {
   })
 });
 
+// to hide taost 
+
+document.addEventListener('DOMContentLoaded', function() {
+  var customToast = document.getElementById('customToast');
+  var closeButton = customToast.querySelector('.close');
+
+  closeButton.addEventListener('click', function() {
+    var toast = new bootstrap.Toast(customToast);
+    toast.hide();
+  });
+});
+
 /////////////////// handling the increment and decremetn buttons
 
 function handleEnableDisable(itemId) {

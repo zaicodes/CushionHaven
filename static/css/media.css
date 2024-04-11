@@ -17,8 +17,8 @@
   .navbar_Search_show {
     display: block;
     position: absolute;
-    top: 80px;
-    left: 35%;
+    top: 120px;
+    left: 15%;
     background-color: white;
     color: black;
     width: 100%;
@@ -26,7 +26,7 @@
   .sm_search_btn {
     display: none;
     position: absolute;
-    top: 85px;
+    top: 120px;
     left: 65%;
     max-width: 250px;
     padding: 10px 15px;
@@ -130,6 +130,13 @@
   }
   .home-sec-3-backimg {
     width: 100% !important;
+  }
+  .products_dropdown_sorting {
+    position: absolute;
+    left: 80px;
+    background-color: white;
+    list-style-type: none;
+    display: none;
   }
 }
 @media (max-width: 400px) {

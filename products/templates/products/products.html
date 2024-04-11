@@ -53,11 +53,14 @@
         {% endif %}
 
         <h1 class="small_heading_products">{{ product.name }}</h1>
-        <p class="price_alproducts">$ {{ product.price }} USD</p>
+<div class="d-flex justify-content-around">
+  <p class="price_alproducts">$ {{ product.price }} USD</p>
+  <p class="price_alproducts">{{ product.ratings}} Ratings </p>
+</div>
         {% if request.user.is_superuser %}
         <small class="ml-3">
-            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+            <a class="fs-3 mx-3" href="{% url 'edit_product' product.id %}">Edit</a> | 
+            <a class="text-danger fs-3" href="{% url 'delete_product' product.id %}">Delete</a>
         </small>
     {% endif %}
       </div>

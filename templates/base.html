@@ -47,6 +47,7 @@
     />
 
     <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/product.css' %}" />
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link rel="stylesheet" href="{% static 'css/productsdetail.css' %}" />
@@ -126,16 +127,16 @@
               <a class="small_link" href="{% url 'home' %}">Home</a
               ><a class="small_link" href="/#homesection2">About me</a>
 
-              <span class="prodcuts_hover"
+              <span class="prodcuts_hover "
 
                 ><a class=" p-0 "
             
                   href="{% url 'products' %}"
                 >  Products</a
                 >
-                 <i class="fa-solid fa-caret-down  mx-5"    
+                 <i class="fa-solid fa-caret-down  mx-5 mx-md-0 "    
                   ></i> 
-                <ul class="products_dropdown">
+                <ul class="products_dropdown  ">
                   <li class="products_sort">
                     <div
                       onmouseenter="arrowhandler()"
@@ -145,11 +146,9 @@
                       products
                       
                      <span    >
-                      <i class="px-5"
-                      class="fa-solid fa-arrow-right" 
-                    ></i>
+                   
                      </span>
-                      <ul class="products_dropdown_sorting">
+                      <ul class="products_dropdown_sorting ">
                         <li>
                           <a
                             href="{% url 'products' %}?sort=price&direction=asc"
@@ -195,7 +194,7 @@
             </span>
        
         <div class="dropdown">
-          <button class=" border-0 bg-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class=" border-0 bg-white dropdown-toggle fs-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="login_btn">
               <i class="fa-solid fa-user"></i>
             </span>
@@ -255,16 +254,22 @@
           </div>
         </div>
         <div class="footer_links">
-          <a href="">Home</a><a href="">About me</a><a href="">Products</a
-          ><a href="">Contact me</a>
+          <a class="small_link" href="{% url 'home' %}">Home</a
+            > <a class="small_link" href="/#homesection2">About me</a
+              > <a class="small_link" href="{% url 'products' %}">Products</a
+                > <a class="small_link" href="/#homesection6">Contact me</a
+                  >
         </div>
         <div class="footer_socil_links">
-          <a href=""> <i class="fa-brands fa-facebook"></i> </a
-          ><a href=""><i class="fa-brands fa-instagram"></i></a
-          ><a href="{% url 'products' %}"
+          <a href="https://www.facebook.com/" target="_blank"> <i class="fa-brands fa-facebook"></i> </a
+          ><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a
+          ><a target="_blank" href="https://twitter.com/"
             ><i class="fa-brands fa-twitter"></i
           ></a>
         </div>
+      </div>
+      <div class="container fs-4 text-black  text-center">
+        <p>Developed by: <a style="color: darkmagenta;" href="https://github.com/zaicodes"  target="_blank">Zainab Ismail </a> &copy;2024</p>
       </div>
     </footer>
     <script src="{% static 'js/script.js' %}"></script>
@@ -506,4 +511,8 @@ form.addEventListener('submit', function(ev) {
         location.reload();
     })
 });
+
+
+        $('.toast').toast('show');
+    </script>
 </script>

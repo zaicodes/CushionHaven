@@ -18,9 +18,11 @@ nav {
   padding-right: 20px;
 }
 
+
 html {
   font-size: 10px;
 }
+
 a {
   display: inline-block;
   text-decoration: none;
@@ -28,9 +30,21 @@ a {
 span {
   display: inline-block;
 }
+.form-label{
+  font-size: 16px !important;
+}
+#id_default_country{
+  font-size: 16px;
+}
+#id_category{
+  font-size: 16px !important;
+}
 .nav_links {
   display: flex;
   align-items: center;
+}
+.checkboxinput{
+  font-size: 16px !important;
 }
 .nav_links a,
 .prodcuts_hover {
@@ -39,6 +53,9 @@ span {
   font-family: "Cormorant Garamond", serif;
   color: purple;
   font-weight: 400;
+}
+.form-text {
+font-size: 16px !important;
 }
 .navlogo a {
   font-size: 30px;
@@ -263,14 +280,14 @@ footer {
 }
 .products_dropdown_sorting {
   position: absolute;
-  left: 140px;
+  left: 120px;
   background-color: white;
   list-style-type: none;
   display: none;
 }
 
 .prducts_ratings {
-  padding-top: 20px;
+  /* padding-top: 20px; */
   text-align: center;
 }
 .products_right_arrow {
@@ -517,4 +534,7 @@ color: #fff;
 
 .allauth-form-inner-content a {
 color: #17a2b8; /* text-info */
+}
+.form-control{
+font-size: 16px;
 }

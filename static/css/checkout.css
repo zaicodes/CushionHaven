@@ -10,8 +10,11 @@
   box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
+  font-size: 16px;
 }
-
+.stripe-style-input::placeholder{
+  font-size: 16px;
+}
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
@@ -54,4 +57,7 @@
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+.form-check-label{
+  font-size: 16px;
 }
