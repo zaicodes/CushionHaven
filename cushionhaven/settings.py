@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-1y=e+qbd!6x%e4#ww8ssj608j_n0v_g=#ywqi@*p6o_3fcr+fo
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'cushionhaven.herokuapp.com',
-    'localhost',
+    # 'cushionhaven.herokuapp.com',
+    # 'localhost',
 ]
 
 
