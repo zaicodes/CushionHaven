@@ -9,6 +9,7 @@ Link to live site: []()
 ## CONTENTS
 
 - [User Experience](#User-Experience-ux)
+  - [Project Goal](#Project-Goal)
   - [User Stories](#user-Stories)
 
 - [Design](#design)
@@ -27,6 +28,8 @@ Link to live site: []()
 - [Technologies used](#Technologies-Used)
   - [Languages used](#Languages-Used)
   - [Frameworks/Tools Used](#frameworkstools-used)
+  - [Libraries Used](#libraries-used)
+  - [Stripe](#stripe)
 
 - [Testing](#Testing)
 
@@ -41,6 +44,10 @@ Link to live site: []()
  -----
 
 ## User Experience (UX)
+
+### Project Goal
+
+Cushion Haven is a Business to Consumer (B2C) e-commerce platform tailored for individuals passionate about interior decoration and home styling. Its primary audience comprises homeowners, interior enthusiasts, and decorators, ranging from novices to seasoned professionals. It offers a diverse selection of cushions, pillows, and blankets across various price ranges, catering to different preferences and budgets. Cushion Haven aims to provide customers with a one-stop destination for all their home decor needs, simplifying the process of finding the perfect accents for their living spaces. Understanding the demand for a platform like this within the community, it strives to meet the needs of home decor enthusiasts.
 
 ### User Stories
 
@@ -113,6 +120,25 @@ Various security measures were implemented for this project:
 
 ### General Features
 
+- Favicon: Created using Favicon.io, the site's favicon bears the initials of Cushion Haven, mirroring the font and colors of the website.
+
+- Navbar: The navbar is divided into sections for easy navigation. It includes the logo and search bar, website pages, and account and bag icons. It is responsive, featuring a hamburger menu toggle on smaller screens.
+
+- Footer: Also split into sections, the footer includes the logo, website pages, and social links. It is responsive and stacks sections on small screens.
+
+- Home Page: The home page features a hero section with an image, message, and call-to-action button. It also includes an About section with three parts, each providing information about the designer, collection, and products. Additionally, there's a Contact Us section with contact information and a form.
+
+- Products Page: Displays product images, names, prices, tags, and star ratings. Superusers have the option to update or delete products. It includes a sorting function and shows the number of items on the page.
+
+- Product Detail Page: Provides detailed information about a selected item, including an image, title, price, description, tags, and quantity selector. Users can add items to their bag and receive a success toast notification.
+
+- Bag Page: Lists all items in the user's bag with images, names, SKUs, prices, quantities, and subtotals. Users can adjust quantities or delete items. It displays bag totals and offers a secure checkout option.
+
+- Checkout Page: Divided into delivery and order summary sections. Users can enter delivery information, with pre-populated details for registered users. It includes payment information and buttons for adjusting the bag or completing the order.
+
+- Checkout Success Page: Displays a summary of the order and notifies users of a confirmation email. It also includes a button to view latest deals and shows a success toast.
+
+- Profile Page: Contains sections for default delivery information and order history. Users can update their inf
 
 
 ### Accessibility
@@ -130,6 +156,16 @@ The website's responsiveness across diverse screen sizes and browsers is achieve
 
 ### Future Implementations
 
+In future implementations, I would like to:
+
+- Add user reviews for products with a rating facility.
+- Introduce coupons which can be accepted in the checkout.
+- Create a fully functioning stock management system that updates the stock value upon insertion to the bag and returns the value to the stock if the bag session ends.
+- Introduce wish list functionality for users to add and remove products from their wish list, this is something I was planning to implement before but due to running out of time, I wasn't able to.
+- Send newsletters to users.
+- Create groups of users on the admin page to enable sending out specific emails, such as birthday coupons or loyal customer coupons. This section could also be used to create different mailing groups for newsletters depending on users' preferences.
+
+
 ## Technologies Used
 
 ### Languages Used
@@ -145,16 +181,45 @@ The website's responsiveness across diverse screen sizes and browsers is achieve
 - JQuery: is a JavaScript library that makes it easier to work with HTML elements, handle events, create animations, and perform AJAX requests on web pages. 
 - Font Awesome: it's used to add icons to the site. We got it by linking to a CDN.
 - Django Allauth: it's used for authentication, registering, and managing accounts on the site.
+- Visual Studio Code: to code my project.
 - Midjourney: is an artificial intelligence program that was used for creating the images using prompts.
 - Balsamiq: it's used to create wireframes.
-- Favicon.io: it's used to create the favicon.
+- Favicon.io: it's used to create the tab icons for the website.
 - Git: it's used for version control.
 - GitHub: it's where the codebase is hosted.
+- Google Dev Tools: it's used to test features, and responsiveness and to troubleshoot.
+- Google fonts: to get typography with free, customizable fonts.
 - Heroku: it's used as our hosting platform.
 - PostgreSQL: it's used as our hosting platform’s database. 
 - Am I Responsive: to create responsive images of the website on variety of different device sizes.
+- cloudconvert: to convert images from png or jpg to webp.
+- img2go.com : to resize images to any size.
 - Coolors: to generate the colour palette used for the website. 
 
+
+### Libraries Used
+
+- Django Allauth: Utilized for authentication, registration, and account management.
+- Django-countries: library that provides a comprehensive list of world countries and their associated data, such as country codes, names, and flags.
+- Django_crispy_forms: Provides a tag and filter for rendering forms quickly.
+- Gunicorn: A Python WSGI HTTP Server.
+- Pillow: Python imaging library.
+- dj_database_url: Enables the utilization of the DATABASE_URL variable.
+- psycopg2: Postgres database adapter facilitating connection with a postgres database.
+- django-storages: A storage backend library.
+
+
+### Stripe
+
+[Stripe](https://stripe.com/gb) is utilized in the project to integrate the payment system.
+
+Currently, Stripe for the website is in developer mode, enabling us to process test payments and ensure the site's functionality.
+
+| Type | Card No | Expiry | CVC | ZIP |
+| :--- | :--- |:--- | :--- | :--- |
+| Success| Visa | 4242 4242 4242 4242 | A date in the future | Any 3 digits | Any 5 digits |
+| Require authorisation | 4000 0027 6000 3184 | A date in the future | Any 3 digits | Any 5 digits |
+| Declined | 4000 0000 0000 0002 | A date in the future | Any 3 digits | Any 5 digits |
 
 ## Testing 
 Please consult the [TESTING.md](https://github.com/zaicodes/CushionHaven/blob/main/TESTING.md) document for a comprehensive overview of all conducted tests.

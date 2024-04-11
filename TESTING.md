@@ -27,6 +27,8 @@ Link to README file [README](https://github.com/zaicodes/CushionHaven)
 
 ## Validation Testing
 
+The website underwent validation using W3C, WC3 CSS, JSHint JavaScript validator, and [CI PEP8 validator](https://pep8ci.herokuapp.com/).
+
 ### HTML
 
 ### CSS
