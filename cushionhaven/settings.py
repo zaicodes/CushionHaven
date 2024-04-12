@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    'https://cushionhaven-e17d4f9ff625.herokuapp.com/', 'localhost'
+    'cushionhaven-e17d4f9ff625.herokuapp.com', 'localhost'
 ]
 
 
