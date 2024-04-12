@@ -5,14 +5,14 @@
       <div class="home_sec_1_flex_col1">
         <img
           src="{% static 'images/cta-image.jpeg' %}"
-          alt="Example Image"
+          alt="hero section"
         />
       </div>
       <div class="home_sec_1_flex_col2_main">
         <div class="home_sec_1_flex_col2 ">
           <p>New</p>
           <h2 class="heading">Spring Collection 2024</h2>
-          <a href="{% url 'products' %}" class="underline_btn">Buy Now</a>
+          <a href="{% url 'products' %}" area-label="click to check products" class="underline_btn">Buy Now</a>
         </div>
       </div>
     </div>
@@ -27,36 +27,36 @@
         <div class="home_sec_2_flex_col_img">
           <img
             src="{% static 'images/about-designer1.png' %}"
-            alt=""
+            alt="about the designer"
           />
         </div>
         <div class="home_sec_2_flex_content">
           <h2 class="small_heading">About me</h2>
-          <p><a href="#home_section3" class="underline_btn">Learn more</a></p>
+          <p><a href="#home_section3" area-label="learn more about the designer" class="underline_btn">Learn more</a></p>
         </div>
       </div>
       <div class="home_sec_2_flex_col">
         <div class="home_sec_2_flex_col_img">
           <img
             src="{% static 'images/about-products.png' %}"
-            alt=""
+            alt="about collection"
           />
         </div>
         <div class="home_sec_2_flex_content">
           <h2 class="small_heading">About collection</h2>
-          <p><a href="#home_section4" class="underline_btn">Learn more</a></p>
+          <p><a href="#home_section4" area-label="learn more about the collection" class="underline_btn">Learn more</a></p>
         </div>
       </div>
       <div class="home_sec_2_flex_col">
         <div class="home_sec_2_flex_col_img">
           <img
             src="{% static 'images/about-products2.png' %}"
-            alt=""
+            alt="about product's categories"
           />
         </div>
         <div class="home_sec_2_flex_content">
           <h2 class="small_heading">About products</h2>
-          <p><a href="#home_section5" class="underline_btn">Learn more</a></p>
+          <p><a href="#home_section5" area-label="learn more about the categories" class="underline_btn">Learn more</a></p>
         </div>
       </div>
     </div>
@@ -94,7 +94,7 @@
       <div>
         <img
           src="{% static 'images/1.jpeg' %}"
-          alt="Example Image"
+          alt="an image of sofa with cushions 1"
         />
       </div>
     </div>
@@ -102,7 +102,7 @@
       <div>
         <img
           src="{% static 'images/2.jpeg' %}"
-          alt="Example Image"
+          alt="an image of sofa with cushions 2"
         />
       </div>
       <div class="home_section_4_grid_col">
@@ -128,7 +128,7 @@
       <div>
         <img
           src="{% static 'images/3.jpeg' %}"
-          alt="Example Image"
+          alt="an image of sofa with cushions 3"
         />
       </div>
     </div>
@@ -140,38 +140,38 @@
     <div class="products_grid_home">
       <div class="products_grid_home_col">
         <div class="products_grid_home_col_img">
-          <a href="{% url 'products' %}?category=cushion ">   <img
+          <a href="{% url 'products' %}?category=cushion" area-label="cushion category">   <img
             src="{% static 'images/cushions.jpeg' %}"
-            alt="Example Image"
+            alt="an image of cushions"
           /></a>
        
         </div>
        
-        <h1 class="small_heading"> <a  href="{% url 'products' %}?category=cushion">CUSHIONS</a></h1>
+        <h1 class="small_heading"> <a  href="{% url 'products' %}?category=cushion" area-label="title for cushions">CUSHIONS</a></h1>
       </div>
       <div class="products_grid_home_col">
         <div class="products_grid_home_col_img">
           <div class="products_grid_home_col_img">
-            <a href="{% url 'products' %}?category=blanket">   <img
+            <a href="{% url 'products' %}?category=blanket" area-label="blanket category">   <img
               src="{% static 'images/blankets.jpeg' %}"
-              alt="Example Image"
+              alt="an image of blankets"
             /></a>
          
           </div>
          
-          <h1 class="small_heading"> <a  href="{% url 'products' %}?category=blanket">BLANKETS</a></h1>
+          <h1 class="small_heading"> <a  href="{% url 'products' %}?category=blanket" area-label="title for blanket">BLANKETS</a></h1>
       </div>
     </div>
       <div class="products_grid_home_col">
         <div class="products_grid_home_col_img">
-          <a href="{% url 'products' %}?category=pillow">   <img
+          <a href="{% url 'products' %}?category=pillow" area-label="pillow category">   <img
             src="{% static 'images/pillows.jpeg' %}"
-            alt="Example Image"
+            alt="an image of pillows"
           /></a>
        
         </div>
        
-        <h1 class="small_heading"> <a href="{% url 'products' %}?category=pillow">PILLOWS</a></h1>
+        <h1 class="small_heading"> <a href="{% url 'products' %}?category=pillow" area-label="title for pillows" >PILLOWS</a></h1>
       </div>
  
   </div>

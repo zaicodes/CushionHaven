@@ -31,7 +31,7 @@
 
         <img
           class="img-fluid rounded p-5 p-md-1"
-          src="{{item.product.img.url}}"
+          src="{{item.product.img.url}}" alt="product image"
         />
 
 
@@ -110,8 +110,7 @@
         {% endif %}
 
 
-        <a
-          href="{% url 'products' %}"
+        <a href="{% url 'products' %}" area-label="Keep shopping"
           class="btn btn-outline-black rounded-0 btn-lg border-0"
         >
           <span class="icon">
@@ -119,7 +118,7 @@
           </span>
           <span class="text-uppercase fs-3">Keep Shopping</span>
         </a>
-        <a href="{% url 'checkout' %}" class="allproducts_name   para">
+        <a href="{% url 'checkout' %}" class="allproducts_name para" area-label="secure checkout">
           <span class="text-uppercase">Secure Checkout</span>
           <span class="icon">
             <i class="fas fa-lock"></i>
@@ -128,7 +127,7 @@
       </div>
       {% else %}
       <p class="allproducts_name para">Your bag is empty.</p>
-      <a href="{% url 'products' %}" class="allproducts_name para">
+      <a href="{% url 'products' %}" class="allproducts_name para" area-label="empty bag">
         <span class="icon">
           <i class="fas fa-chevron-left"></i>
         </span>
