@@ -115,7 +115,18 @@ font-size: 16px !important;
   border-radius: 10px;
 }
 .sm_search_btn {
-  display: none;
+  position: absolute;
+ 
+  max-width: 250px;
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  background-color: #c9afc6;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.381);
+  color: white;
+  border-radius: 10px;
 }
 .navbar_Search::placeholder {
   color: white;
@@ -126,7 +137,7 @@ font-size: 16px !important;
   border: none;
   cursor: pointer;
   border-radius: 5px;
-
+  display: none;
   height: 100%;
 }
 .search_btn_navbar i {
@@ -136,9 +147,6 @@ font-size: 16px !important;
   color: white;
 }
 
-.navbar_Search_show {
-  position: absolute;
-}
 
 /* ********************************** */
 /* footer  */

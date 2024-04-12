@@ -6,8 +6,8 @@ const sm_search_btn = document.querySelector(".sm_search_btn");
 const small_link = document.querySelectorAll(".small_link")
 searchbtn.addEventListener("click", function (e) {
   e.preventDefault();
-  navbar_Search.classList.add("navbar_Search_show");
-  sm_search_btn.classList.add("sm_search_btn_show");
+  navbar_Search.classList.toggle("navbar_Search_show");
+  sm_search_btn.classList.toggle("sm_search_btn_show");
 });
 
 ////////////
@@ -108,3 +108,4 @@ $(".update-link").click(function (e) {
 });
 
 
+// Contact form

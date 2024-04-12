@@ -26,7 +26,7 @@
             <div class="input-group">
               <div class="input-group-prepend">
                 <button
-                  class="decrement-qty btn btn-black rounded-0"
+                  class="decrement-qty btn btn-black rounded-0 p-3"
                   data-item_id="{{ product.id }}"
                   id="decrement-qty_{{ product.id }}"
                 >
@@ -45,9 +45,9 @@
                 data-item_id="{{ product.id }}"
                 id="id_qty_{{ product.id }}"
               />
-              <div class="input-group-append">
+              <div class="input-group-append ">
                 <button
-                  class="increment-qty btn btn-black rounded-0"
+                  class="increment-qty btn btn-black rounded-0 p-3"
                   data-item_id="{{ product.id }}"
                   id="increment-qty_{{ product.id }}"
                 >
@@ -72,5 +72,23 @@
     </form>
   </div>
 </section>
-{% endblock %} {% block postloadjs %} {{ block.super }} {% include
-"products/includes/quantity_input_script" %} {% endblock %}
+<section class="comment_section container py-5">
+  <h2 class="fw-bolder border-bottom fs-1 py-5">Comments</h2>
+  <div class="comments">
+    {% for comment in product.comment_set.all %}
+      <div class="comment">
+        <p class="para">{{ comment.text }}</p>
+        <span class="fs-4" >{{ comment.created_at }}</span>
+      </div>
+    {% endfor %}
+  </div>
+  <form method="post" action="{% url 'add_comment' product.id %}">
+    {% csrf_token %}
+    <textarea name="comment" class="fs-4 p-3" rows="10" cols="60" placeholder="Add your comment"></textarea>
+    <br>
+    <button class="btn bg-black text-white fs-4" type="submit">Submit</button>
+  </form>
+</section>
+
+
+{% endblock %} 

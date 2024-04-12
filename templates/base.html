@@ -194,7 +194,7 @@
             </span>
        
         <div class="dropdown">
-          <button class=" border-0 bg-white dropdown-toggle fs-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class=" border-0 bg-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="login_btn">
               <i class="fa-solid fa-user"></i>
             </span>
@@ -250,7 +250,7 @@
       <div class="container footer_flex">
         <div>
           <div class="navlogo">
-            <a href="#">Cushion Haven</a>
+            <a href="{% url 'home' %}">Cushion Haven</a>
           </div>
         </div>
         <div class="footer_links">
@@ -515,4 +515,48 @@ form.addEventListener('submit', function(ev) {
 
         $('.toast').toast('show');
     </script>
+
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+></script>
+
+<script type="text/javascript">
+(function () {
+  emailjs.init("YHTCkok7fd_7kaLK-");
+})();
+
+function sendMail() {
+
+
+
+  var params = {
+    fromName: document.getElementById("fullname").value,
+    emailId: document.getElementById("email_id").value,
+    message: document.getElementById("message").value,
+  };
+
+  const value = document.getElementById("email_id").value;
+  if (value.indexOf("@") === -1) {
+    alert("Please enter a valid email");
+    return;
+  } else {
+    emailjs
+      .send("service_qxmr6gc", "template_47nej3m", params)
+      .then(function (res) {
+        console.log("EmailJS Response:", res);
+        document.querySelector(".popupcontact").classList.remove("hidden")
+        setTimeout(() => {
+    document.querySelector(".popupcontact").classList.add("hidden")
+  }, 5000);
+
+      })
+
+    document.getElementById("fullname").value = "";
+    document.getElementById("email_id").value = "";
+    document.getElementById("message").value = "";
+  }
+}
+
+
 </script>
