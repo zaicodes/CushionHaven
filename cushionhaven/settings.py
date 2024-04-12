@@ -182,6 +182,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 if 'USE_AWS' in os.environ:
+    # Cache Control - tells browser ok to cache for a long time
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+    
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'cushionhaven'
     AWS_S3_REGION_NAME = 'eu-west-2'
