@@ -32,7 +32,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
 {% else %}
 <p class="fs-3">{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+<a href="{{ signup_url }}" class="fs-3 m-3 p-3">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
 
 <form class="login" method="POST" action="{% url 'account_login' %}">
@@ -41,11 +41,8 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Home</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-  <p class="mt-2">
-    <a class="button secondaryAction fs-3" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  </p>
+  <a class="btn fs-3 m-3 p-3 btn-outline-black rounded-0" href="{% url 'home' %}">Home</a>
+  <button class="primaryAction fs-3 m-3 p-3" type="submit">{% trans "Sign In" %}</button>
 </form>
 
 {% endblock %}

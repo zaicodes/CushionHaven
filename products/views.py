@@ -138,6 +138,7 @@ def delete_product(request, product_id):
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
 
+
 @login_required
 def add_comment(request, product_id):
     """ Add a comment to a product """
@@ -145,7 +146,8 @@ def add_comment(request, product_id):
     if request.method == 'POST':
         text = request.POST.get('comment')
         if text:
-            comment = Comment.objects.create(user=request.user, product=product, text=text)
+            Comment.objects.create(
+                user=request.user, product=product, text=text)
             messages.success(request, 'Comment added successfully!')
         else:
             messages.error(request, 'Comment cannot be empty!')

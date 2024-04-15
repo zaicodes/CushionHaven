@@ -1,11 +1,9 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<!-- <div class="section_1_products"><div class="container">Products</div></div> -->
-
 <div class="container">
   {% for c in current_categories%}
   <a href="{% url 'products' %}?category={{c.name}}">
-    <span>{{c.friendly_name}}</span>
+    <span class="fs-1 fw-bold" style="color: #b0b0b0; text-transform: capitalize;" >{{c.friendly_name}}</span>
   </a>
   {% endfor %}
   <div class="sorting_main">

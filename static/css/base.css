@@ -103,6 +103,7 @@ font-size: 16px !important;
   max-width: 100px;
 }
 .navbar_Search {
+  z-index: 5;
   max-width: 250px;
   padding: 10px;
   outline: none;
@@ -129,7 +130,8 @@ font-size: 16px !important;
   border-radius: 10px;
 }
 .navbar_Search::placeholder {
-  color: white;
+  color: rgb(0, 0, 0) !important;
+  font-weight: 700;
 }
 .search_btn_navbar {
   background-color: #800080;
@@ -507,7 +509,7 @@ a.category-badge > span.badge:hover {
 }
 
 .allauth-form-inner-content input::placeholder {
-  color: #aab7c4;
+  color: #0d0e0f;
 }
 
 .allauth-form-inner-content button,
