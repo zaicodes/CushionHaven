@@ -28,6 +28,7 @@ page_header %}
         <div class="col-3 mb-1">
           <a href="{% url 'product_detail' item.product.id %}">
             <img
+            alt"{{ item.product.name }}"
             class="img-fluid rounded p-5 p-md-1"
             src="{{item.product.img.url}}" area-label="product image"
           />

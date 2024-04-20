@@ -78,12 +78,11 @@
             </div>
        
         </form>
+      </p>
         <a class="update-link text-info"><small class="fs-4 px-3">Update</small></a>
         <a class="remove-item text-danger float-right" data-size="{{item.size}}" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small class="fs-4 px-3">Remove</small></a>
-     
    
-   
-        </p>
+
       </div>
 
 
@@ -109,8 +108,7 @@
         </p>
         {% endif %}
 
-
-        <a href="{% url 'products' %}" area-label="Keep shopping"
+        <a href="{% url 'products' %}"
           class="btn btn-outline-black rounded-0 btn-lg border-0"
         >
           <span class="icon">
@@ -118,7 +116,7 @@
           </span>
           <span class="text-uppercase fs-3">Keep Shopping</span>
         </a>
-        <a href="{% url 'checkout' %}" class="allproducts_name para" area-label="secure checkout">
+        <a href="{% url 'checkout' %}" class="allproducts_name para" >
           <span class="text-uppercase">Secure Checkout</span>
           <span class="icon">
             <i class="fas fa-lock"></i>
@@ -127,7 +125,7 @@
       </div>
       {% else %}
       <p class="allproducts_name para">Your bag is empty.</p>
-      <a href="{% url 'products' %}" class="allproducts_name para" area-label="empty bag">
+      <a href="{% url 'products' %}" class="allproducts_name para">
         <span class="icon">
           <i class="fas fa-chevron-left"></i>
         </span>

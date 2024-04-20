@@ -125,7 +125,7 @@
       <div class="container">
         <nav>
           <div class="navlogo">
-            <a href="{% url 'home' %}" area-label="navbar logo">Cushion Haven</a>
+            <a href="{% url 'home' %}">Cushion Haven</a>
           </div>
           <div>
             <form method="GET" action="{% url 'products' %}">
@@ -168,9 +168,6 @@
                     >
                       products
                       
-                     <span    >
-                   
-                     </span>
                       <ul class="products_dropdown_sorting ">
                         <li>
                           <a
@@ -227,11 +224,11 @@
                 {% if request.user.is_superuser %}
                     <a href="{%  url 'add_product'   %}" class="dropdown-item" area-label="management">Product Management</a>
                 {% endif %}
-                <a href="{% url 'profile' %}" class="dropdown-item" area-label="profile">My Profile</a>
+                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                 <a href="{% url 'account_logout' %}" class="dropdown-item" area-label="logout">Logout</a>
             {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item" area-label="register">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item" area-label="login">Login</a>
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
             {% endif %}
         </div>
         </div>
@@ -284,10 +281,9 @@
                   >
         </div>
         <div class="footer_socil_links">
-          <a href="https://www.facebook.com/" target="_blank" area-label="facebook"> <i class="fa-brands fa-facebook"></i> </a
-          ><a href="https://www.instagram.com/" target="_blank" area-label="instagram"><i class="fa-brands fa-instagram"></i></a
-          ><a target="_blank" href="https://twitter.com/"
-          area-label="twitter"><i class="fa-brands fa-twitter"></i
+          <a href="https://www.facebook.com/" target="_blank" <i class="fa-brands fa-facebook"></i> </a
+          ><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a
+          ><a target="_blank" href="https://twitter.com/"<i class="fa-brands fa-twitter"></i
           ></a>
         </div>
       </div>
