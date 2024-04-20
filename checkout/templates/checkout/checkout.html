@@ -28,9 +28,9 @@ page_header %}
         <div class="col-3 mb-1">
           <a href="{% url 'product_detail' item.product.id %}">
             <img
-            alt"{{ item.product.name }}"
+            alt="{item.product.name}"
             class="img-fluid rounded p-5 p-md-1"
-            src="{{item.product.img.url}}" area-label="product image"
+            src="{{item.product.img.url}}"
           />
           </a>
         </div>
@@ -60,6 +60,49 @@ page_header %}
             <strong>${{ grand_total | floatformat:2 }}</strong>
           </p>
         </div>
+        <fieldset class="rounded px-3 mb-5">
+          {{order}}
+
+           <h1 class="fs-2 my-3">Address book</h1>
+
+   
+          <div class="addressbook bg-light p-5">
+            
+            <div class="addressbook bg-light p-5">
+              {% if address_info %}
+                <h1 class="fs-2 my-3">Address book</h1>
+                <div class="row gy-4">
+                  <div class="col-12 bg-white p-4">
+                    <div>
+                      <p class="fs-4"> {{ address_info.street_address1 }}</p>
+                      {% if address_info.street_address2 %}
+                        <p class="fs-4">{{ address_info.street_address2 }}</p>
+                      {% endif %}
+                      <p class="fs-4"> {{ address_info.postcode }}</p>
+                      <p class="fs-4"> {{ address_info.town_or_city  }}</p>
+                      <p class="fs-4"> {{ address_info.county  }}</p>
+                      <p class="fs-4"> {{ address_info.country }}</p>
+                      <a href="{% url 'edit_address' address_info.id %}" class="btn bg-white text-info fs-4">Edit</a>
+                      <small class="ml-3">
+                        <a href="{% url 'delete_address' address_info.id %}" onclick="" class="btn btn-danger">Delete</a>
+            
+                    </small>
+                    </div>
+                  </div>
+                </div>
+              {% else %}
+                <p class="fs-5 fw-bold">There is no address you selected</p>
+              {% endif %}
+
+            <div>
+  
+         </div>
+
+            </div>
+          </div>
+
+   
+  
       </div>
     </div>
     <div class="col-12 col-lg-6">
@@ -148,11 +191,16 @@ page_header %}
               <strong>${{ grand_total|floatformat:2 }}</strong></span
             >
           </p>
+     
         </div>
       </form>
     </div>
   </div>
 </div>
+<div>
+  {% csrf_token %}
+     
+ 
 <div id="loading-overlay">
   <h1 class="text-light logo-font loading-spinner">
       <span class="icon">
@@ -162,4 +210,3 @@ page_header %}
 </div>
 {% endblock %}
 
-  

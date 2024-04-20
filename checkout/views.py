@@ -8,15 +8,15 @@ from django.shortcuts import (
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-
-from .forms import OrderForm
-from .models import Order, OrderLineItem
+from django.contrib.auth.decorators import login_required
+from .forms import OrderForm, AddressForm
+from .models import Order, OrderLineItem, Address
 
 from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
-
+from django.http import HttpResponseBadRequest
 import stripe
 import json
 
@@ -38,28 +38,16 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
+
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
-
-        form_data = {
-            'full_name': request.POST['full_name'],
-            'email': request.POST['email'],
-            'phone_number': request.POST['phone_number'],
-            'country': request.POST['country'],
-            'postcode': request.POST['postcode'],
-            'town_or_city': request.POST['town_or_city'],
-            'street_address1': request.POST['street_address1'],
-            'street_address2': request.POST['street_address2'],
-            'county': request.POST['county'],
-        }
-
-        order_form = OrderForm(form_data)
-        if order_form.is_valid():
-            order = order_form.save(commit=False)
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            order = form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
@@ -142,7 +130,52 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
+        'address_info': {
+            'full_name': '',
+            'email': '',
+            'phone_number': '',
+            'country': '',
+            'postcode': '',
+            'town_or_city': '',
+            'street_address1': '',
+            'street_address2': '',
+            'county': '',
+        }
+        
     }
+    if request.user.is_authenticated:
+        try:
+            profile = UserProfile.objects.get(user=request.user)
+            order_form = OrderForm(initial={
+                'full_name': profile.user.get_full_name(),
+                'email': profile.user.email,
+                'phone_number': profile.default_phone_number,
+                'country': profile.default_country,
+                'postcode': profile.default_postcode,
+                'town_or_city': profile.default_town_or_city,
+                'street_address1': profile.default_street_address1,
+                'street_address2': profile.default_street_address2,
+                'county': profile.default_county,
+                'id': profile.id,
+            })
+
+            # Update address_info in context with profile data
+            context['address_info'].update({
+                'full_name': profile.user.get_full_name(),
+                'email': profile.user.email,
+                'phone_number': profile.default_phone_number,
+                'country': profile.default_country,
+                'postcode': profile.default_postcode,
+                'town_or_city': profile.default_town_or_city,
+                'street_address1': profile.default_street_address1,
+                'street_address2': profile.default_street_address2,
+                'county': profile.default_county,
+                'id': profile.id,
+               
+            })
+
+        except UserProfile.DoesNotExist:
+            order_form = OrderForm()
 
     return render(request, template, context)
 
@@ -185,6 +218,55 @@ def checkout_success(request, order_number):
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
+        'address_info': {
+            'full_name': order.full_name,
+            'email': order.email,
+            'phone_number': order.phone_number,
+            'country': order.country,
+            'postcode': order.postcode,
+            'town_or_city': order.town_or_city,
+            'street_address1': order.street_address1,
+            'street_address2': order.street_address2,
+            'county': order.county,
+        }
     }
 
     return render(request, template, context)
+@login_required
+def delete_address(request, address_id):
+    print(address_id)
+    profile = request.user.userprofile  
+    
+    if not address_id:
+        
+        return HttpResponseBadRequest("Address ID is missing")
+
+    try:
+        address = profile.id.filter(pk=address_id).first()
+        if address:
+            address.delete()
+            messages.success(request, 'Address deleted successfully.')
+        else:
+            messages.error(request, 'Address not found or you are not authorized to delete it.')
+    except UserProfile.DoesNotExist:
+        messages.error(request, 'User profile not found.')
+    
+    return redirect(reverse('profile'))
+
+@login_required
+def edit_address(request, address_id):
+    # Get the address instance to be edited
+    address_instance = get_object_or_404(Address, pk=address_id)
+
+    if request.method == 'POST':
+        # Populate the form with the POST data and instance
+        form = AddressForm(request.POST, instance=address_instance)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Address updated successfully.')
+            return redirect(reverse('profile'))  # Redirect to profile page after successful update
+    else:
+        # Populate the form with the existing address data
+        form = AddressForm(instance=address_instance)
+
+    return render(request, 'edit_address.html', {'form': form, 'address_id': address_id})

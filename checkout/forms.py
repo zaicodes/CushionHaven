@@ -1,14 +1,11 @@
 from django import forms
-from .models import Order
+from .models import Order, Address
 
 
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('full_name', 'email', 'phone_number',
-                  'street_address1', 'street_address2',
-                  'town_or_city', 'postcode', 'country',
-                  'county',)
+        fields = ('full_name', 'email', 'phone_number', 'country', 'postcode', 'town_or_city', 'street_address1', 'street_address2', 'county',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -37,3 +34,21 @@ class OrderForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
+
+class AddressForm(forms.ModelForm):
+    class Meta:
+        model = Address
+        fields = [ 'postcode', 'country']  # Customize fields as per your model
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'street_address': 'Street Address',
+            'city': 'City',
+            'postcode': 'Postal Code',
+            'country': 'Country',
+        }
+        for field in self.fields:
+            placeholder = placeholders.get(field, '')
+            self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'form-control' 
