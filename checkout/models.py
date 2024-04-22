@@ -8,12 +8,18 @@ from profiles.models import UserProfile
 
 
 class Address(models.Model):
-    country = CountryField(blank_label='Country *', null=False, blank=False)
-    postcode = models.CharField(max_length=20, null=False, blank=False)
-    town_or_city = models.CharField(max_length=40, null=False, blank=False)
-    street_address1 = models.CharField(max_length=80, null=False, blank=False)
-    street_address2 = models.CharField(max_length=80, null=False, blank=False)
-    county = models.CharField(max_length=80, null=False, blank=False)
+    country = CountryField(blank_label='Country *',
+                           null=False, blank=False, default="")
+    postcode = models.CharField(
+        max_length=20, null=False, blank=False, default="")
+    town_or_city = models.CharField(
+        max_length=40, null=False, blank=False, default="")
+    street_address1 = models.CharField(
+        max_length=80, null=False, blank=False, default="")
+    street_address2 = models.CharField(
+        max_length=80, null=False, blank=False, default="")
+    county = models.CharField(
+        max_length=80, null=False, blank=False, default="")
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
