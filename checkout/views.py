@@ -5,6 +5,7 @@ from django.shortcuts import (
     HttpResponse,
     get_object_or_404
 )
+from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -16,7 +17,6 @@ from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
-from django.http import HttpResponseBadRequest
 import stripe
 import json
 
@@ -36,7 +36,6 @@ def cache_checkout_data(request):
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
-
 
 
 def checkout(request):
@@ -141,7 +140,6 @@ def checkout(request):
             'street_address2': '',
             'county': '',
         }
-        
     }
     if request.user.is_authenticated:
         try:
@@ -171,8 +169,9 @@ def checkout(request):
                 'street_address2': profile.default_street_address2,
                 'county': profile.default_county,
                 'id': profile.id,
-               
+
             })
+            print(context)
 
         except UserProfile.DoesNotExist:
             order_form = OrderForm()
@@ -230,43 +229,28 @@ def checkout_success(request, order_number):
             'county': order.county,
         }
     }
-
     return render(request, template, context)
+
+
+@login_required
+def display_addresses(request):
+    addresses = Address.objects.filter(user_profile=request.user.userprofile)
+    return render(request, 'your_template.html', {'addresses': addresses})
+
+
 @login_required
 def delete_address(request, address_id):
-    print(address_id)
-    profile = request.user.userprofile  
-    
-    if not address_id:
-        
-        return HttpResponseBadRequest("Address ID is missing")
-
     try:
-        address = profile.id.filter(pk=address_id).first()
+        address = Address.objects.filter(pk=address_id, user_profile=(
+            request.user.userprofile).first())
         if address:
             address.delete()
-            messages.success(request, 'Address deleted successfully.')
+            # Return success message as JSON response
+            return JsonResponse({'message': 'Address deleted successfully.'})
         else:
-            messages.error(request, 'Address not found or you are not authorized to delete it.')
+            # Return error message as JSON response
+            return JsonResponse({'message': "You're not authorised"}, status=(
+                400))
     except UserProfile.DoesNotExist:
-        messages.error(request, 'User profile not found.')
-    
-    return redirect(reverse('profile'))
-
-@login_required
-def edit_address(request, address_id):
-    # Get the address instance to be edited
-    address_instance = get_object_or_404(Address, pk=address_id)
-
-    if request.method == 'POST':
-        # Populate the form with the POST data and instance
-        form = AddressForm(request.POST, instance=address_instance)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Address updated successfully.')
-            return redirect(reverse('profile'))  # Redirect to profile page after successful update
-    else:
-        # Populate the form with the existing address data
-        form = AddressForm(instance=address_instance)
-
-    return render(request, 'edit_address.html', {'form': form, 'address_id': address_id})
+        # Return error message as JSON response
+        return JsonResponse({'message': 'User profile not found.'}, status=400)

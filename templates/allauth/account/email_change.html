@@ -32,7 +32,7 @@
                         {% endif %}
                     {% endslot %}
                     {% slot help_text %}
-                        {% blocktranslate %}Your email address is still pending verification.{% endblocktranslate %}
+                        {% blocktranslate %}<p class="fs-3">Your email address is still pending verification.</p>{% endblocktranslate %}
                         {% element button form="pending-email" type="submit" name="action_send" tags="minor,secondary" %}
                             {% trans 'Re-send Verification' %}
                         {% endelement %}

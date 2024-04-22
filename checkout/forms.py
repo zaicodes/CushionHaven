@@ -5,7 +5,8 @@ from .models import Order, Address
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('full_name', 'email', 'phone_number', 'country', 'postcode', 'town_or_city', 'street_address1', 'street_address2', 'county',)
+        fields = ('full_name', 'email', 'phone_number', 'country', 'postcode',
+                  'town_or_city', 'street_address1', 'street_address2', 'county',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -35,10 +36,11 @@ class OrderForm(forms.ModelForm):
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
 
+
 class AddressForm(forms.ModelForm):
     class Meta:
         model = Address
-        fields = [ 'postcode', 'country']  # Customize fields as per your model
+        fields = ['postcode', 'country']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -51,4 +53,4 @@ class AddressForm(forms.ModelForm):
         for field in self.fields:
             placeholder = placeholders.get(field, '')
             self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'form-control' 
+            self.fields[field].widget.attrs['class'] = 'form-control'
