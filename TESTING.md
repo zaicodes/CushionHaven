@@ -1,6 +1,6 @@
 # cushionhaven
  
-Link to live site: []()
+Link to live site: [Cushion-Haven](https://cushionhaven-e17d4f9ff625.herokuapp.com/)
 
 Link to README file [README](https://github.com/zaicodes/CushionHaven)
 
@@ -13,8 +13,6 @@ Link to README file [README](https://github.com/zaicodes/CushionHaven)
   - [Python](#Python)
 
 - [Lighthouse](#Lighthouse)
-- [Wave](#Wave)
-- [Accessibility Testing](#Accessibility-Testing)
 - [Responsiveness Testing](#Responsiveness-Testing)
 
 - [Manual Testing](#Manual_Testing)
@@ -31,19 +29,52 @@ The website underwent validation using W3C, WC3 CSS, JSHint JavaScript validator
 
 ### HTML
 
+- HTML W3C Validator Regarding the HTML Validator, it flagged information messages about trailing slashes on void elements, a result of the automatically added /> close tag by Prettier. Manual removal will be addressed in the next file save to rectify this issue. 
+- It also flagged the Django template syntax related which was ignored. other than that, there were no errors found.
+
 ### CSS
+
+CSS Validator (JigSaw) The CSS Validator Jigsaw was used to validate all the CSS files. There were no errors found.
+
+![CSS-Validator](https://github.com/zaicodes/CushionHaven/blob/main/documentation/testing/css-validator.png)
+
 
 ### JavaScript
 
+JSLint was used to check  for any syntax errors in the JS files, and there were couple of warnings found:
+This was something I couldn't resolve, as it could break the code making the var let statements not work as expected.
+
+![JSLint](https://github.com/zaicodes/CushionHaven/blob/main/documentation/testing/jslint.png)
+
+
 ### Python
+
+I had to rectify certain issues such as characters exceeding 79 and ensuring that there are two lines present between functions. Upon running the Python files through the PEP8 validator, no errors were detected.
+
+![pep8-py](https://github.com/zaicodes/CushionHaven/blob/main/documentation/testing/pep8-py.png)
 
 ## Lighthouse
 
-## Wave
-
-## Accessibility Testing
+Google's Lighthouse tool was used to test performance, accessibility, SEO, and PWA aspects of the site. 
+The results are as follow:
 
 ## Responsiveness and Mobile-Friendliness Testing
+
+Thorough testing was performed on the following devices:
+
+Laptop:
+- HP Envy 360
+
+Mobile Devices:
+- iPhone 13 Pro
+- Samsung Galaxy S23 Ultra
+
+In addition, the website was tested on the following browsers:
+- Google Chrome
+- Safari
+- Firefox
+
+All tests showed that the website is fully responsive and adaptable to different screen sizes.
 
 ## Manual Testing
 
@@ -77,9 +108,12 @@ The website underwent validation using W3C, WC3 CSS, JSHint JavaScript validator
 
 ### Full Testing
 
+
 ## Bugs
 
 ### Solved Bugs
 
+
 ### Known Bugs
+
 

@@ -2,9 +2,9 @@
  
 Cushion Haven is an eCommerce store crafted with a blend of HTML, CSS, JavaScript, Python (Django), Bootstrap, jQuery, and PostgreSQL database technologies. Features include a user-friendly checkout process, an add-to-cart functionality, and convenient sorting and search features, allowing customers to easily find their desired products.The navbar features intuitive categories for effortless navigation, while the product detail page provides information about each item, ensuring a satisfying shopping experience from start to finish.
 
-![am-i-responsive](https://github.com/)
+![am-i-responsive](https://github.com/zaicodes/CushionHaven/tree/main/documentation/readme/am-i-responsive.png)
 
-Link to live site: []()
+Link to live site: [Cushion-Haven](https://cushionhaven-e17d4f9ff625.herokuapp.com/)
 
 ## CONTENTS
 
@@ -130,11 +130,11 @@ Various security measures were implemented for this project:
 
 - Products Page: Displays product images, names, prices, tags, and star ratings. Superusers have the option to update or delete products. It includes a sorting function and shows the number of items on the page.
 
-- Product Detail Page: Provides detailed information about a selected item, including an image, title, price, description, tags, and quantity selector. Users can add items to their bag and receive a success toast notification.
+- Product Detail Page: Provides detailed information about a selected item, including an image, title, price, description, tags, and quantity selector. Users can add items to their bag and receive a success toast notification. This page also includes comment box where users can leave a comment under the product.
 
 - Bag Page: Lists all items in the user's bag with images, names, SKUs, prices, quantities, and subtotals. Users can adjust quantities or delete items. It displays bag totals and offers a secure checkout option.
 
-- Checkout Page: Divided into delivery and order summary sections. Users can enter delivery information, with pre-populated details for registered users. It includes payment information and buttons for adjusting the bag or completing the order.
+- Checkout Page: Divided into delivery and order summary sections. Users can enter delivery information, with pre-populated details for registered users. It includes payment information and buttons for adjusting the bag or completing the order. Additionally, it containts address book where the user's different addresses will be saved. This is editable and can be deleted too.
 
 - Checkout Success Page: Displays a summary of the order and notifies users of a confirmation email. It also includes a button to view latest deals and shows a success toast.
 
@@ -215,11 +215,6 @@ In future implementations, I would like to:
 
 Currently, Stripe for the website is in developer mode, enabling us to process test payments and ensure the site's functionality.
 
-| Type | Card No | Expiry | CVC | ZIP |
-| :--- | :--- |:--- | :--- | :--- |
-| Success| Visa | 4242 4242 4242 4242 | A date in the future | Any 3 digits | Any 5 digits |
-| Require authorisation | 4000 0027 6000 3184 | A date in the future | Any 3 digits | Any 5 digits |
-| Declined | 4000 0000 0000 0002 | A date in the future | Any 3 digits | Any 5 digits |
 
 ## Testing 
 Please consult the [TESTING.md](https://github.com/zaicodes/CushionHaven/blob/main/TESTING.md) document for a comprehensive overview of all conducted tests.
