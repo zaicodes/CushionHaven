@@ -107,6 +107,25 @@ For wireframes, please refer to the documentation [wireframes](https://github.co
 
 ### Data Model
 
+![models](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/models.png)
+
+The following data models were used:
+
+- Orders: Stores details about users' orders.
+- Order Line Items: Manages information about items in the user's shopping basket.
+- Products: Contains information about the products available on the site.
+- Users: Used for user registration purposes.
+- comment box: Stores comments submitted through the comment box in product detail page.
+- Profiles: Enables users to access their order history and update default delivery information.
+- Address: Stores information about user addresses in address book during the checkout. This model enables users to save multiple addresses for their history which they can edit and delete.
+
+These tables establish relationships between entities such as products, users, orders, and addresses, allowing for efficient storage and retrieval of data. Additionally, foreign key constraints ensure data integrity and consistency within the database.
+
+I have also used the snowflake icon to show fields that are a foreign key.
+
+Overall, these tables form a relational database schema that allows Cushion Haven to efficiently manage product inventory, user information, orders, and other essential data for its e-commerce platform.
+
+
 ### Security
 
 Various security measures were implemented for this project:
@@ -222,6 +241,45 @@ Please consult the [TESTING.md](https://github.com/zaicodes/CushionHaven/blob/ma
 
 ## Deployment 
 
+To deploy the application using Heroku, follow these steps:
+- Create a requirements.txt file.
+- Generate a Procfile by running the command echo web: python app.py > Procfile, ensuring it starts with a capital P.
+- Log in to Heroku or create an account if needed.
+- Click the 'New' button and select 'Create new app'.
+- Provide a unique name for your project without capital letters or spaces, and choose your region. Click 'Create App'.
+- Navigate to the Resources tab within your project and create a Heroku Postgres Database.
+- Go to the 'Settings' tab in your project. Scroll down and click 'Reveal Config Vars'.
+- Add the following variables:
+-- SECRET_KEY: Your secret key
+-- DATABASE_URL: Your PostgreSQL database URL
+-- STRIPE_PUBLIC_KEY: Your Stripe public key
+-- STRIPE_SECRET_KEY: Your Stripe secret key
+-- USE_AWS: Set to 'True'
+-- AWS_ACCESS_KEY_ID: Add your AWS access key ID
+-- AWS_SECRET_ACCESS_KEY: Add your AWS secret access key
+-- GMAIL_PASSWORD: Add the Gmail password from the selected account for email confirmation.
+- Deploy your project by going to the Deploy tab and selecting 'Connect to GitHub'.
+- Find your repository name and connect it.
+-	Create a new repository on GitHub.
+-	Add the necessary files to the repository.
+-	Go to the settings page of the repository, then scroll down to the GitHub Pages section located at the bottom of the 'Code and automation' sub-section.
+-	Select the main branch and the root folder, then click save.
+-	The website will now be live at the URL provided in the GitHub Pages section.
+
+How to clone the repository
+
+Go to the [Cushion-Haven](https://github.com/zaicodes/CushionHaven) repository on GitHub.
+Click the "Code" button to the right of the screen, click HTTPs and copy the link there.
+Open a GitBash terminal and navigate to the directory where you want to locate the clone.
+On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process.
+
+How to Fork the repository
+
+Go to the [Cushion-Haven](https://github.com/zaicodes/CushionHaven) repository on GitHub.
+Click on the 'Fork' option towards the top left of the page.
+Click the dropdown button and click 'create a new fork'.
+This will bring up a page with details of the repository, fill in boxes as required.
+Click 'create fork'.
 
 ## Credits
 
