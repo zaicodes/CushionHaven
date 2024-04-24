@@ -9,7 +9,7 @@
       "price": 29.99,
       "category": 1,
       "ratings": 4.5,
-      "img": "Floral_Velvet_Cushion_in_pink1.png"
+      "img": "Floral_Velvet_Cushion_in_pink1.webp"
     }
   },
   {
@@ -22,7 +22,7 @@
       "price": 27.99,
       "category": 1,
       "ratings": 4.5,
-      "img": "Bohemian_Tassel_Cushion_in_multi_colours1.png"
+      "img": "Bohemian_Tassel_Cushion_in_multi_colours1.webp"
     }
   },
   {
@@ -36,7 +36,7 @@
       "price": 31.99,
       "category": 1,
       "ratings": 5,
-      "img": "Embroidered_Velvet_Cushion_in_Navy1.png"
+      "img": "Embroidered_Velvet_Cushion_in_Navy1.webp"
     }
   },
   {
@@ -49,7 +49,7 @@
       "price": 25.99,
       "category": 2,
       "ratings": 4,
-      "img": "Striped_Knit_Pillow_in_gray1.png"
+      "img": "Striped_Knit_Pillow_in_gray1.webp"
     }
   },
   {
@@ -62,7 +62,7 @@
       "price": 24.99,
       "category": 2,
       "ratings": 4.5,
-      "img": "Geometric_Throw_Pillow_in_blue1.png"
+      "img": "Geometric_Throw_Pillow_in_blue1.webp"
     }
   },
   {
@@ -75,7 +75,7 @@
       "price": 34.99,
       "ratings": 4.8,
       "category": 2,
-      "img": "Embroidered_Lumbar_Pillow_in_cream1.png"
+      "img": "Embroidered_Lumbar_Pillow_in_cream1.webp"
     }
   },
   {
@@ -88,7 +88,7 @@
       "price": 39.99,
       "ratings": 4.5,
       "category": 3,
-      "img": "Knit_Blanket_in_gray1.png"
+      "img": "Knit_Blanket_in_gray1.webp"
     }
   },
   {
@@ -102,7 +102,7 @@
       "price": 49.99,
       "category": 3,
       "ratings": 4.5,
-      "img": "Faux_Fur_Throw_in_white1.png"
+      "img": "Faux_Fur_Throw_in_white1.webp"
     }
   },
   {
@@ -115,7 +115,7 @@
       "price": 42.99,
       "ratings": 4.5,
       "category": 3,
-      "img": "Chunky_Knit_Throw_Blanket_in_beige1.png"
+      "img": "Chunky_Knit_Throw_Blanket_in_beige1.webp"
     }
   },
   {
@@ -128,7 +128,7 @@
       "price": 36.99,
       "category": 3,
       "ratings": 4.5,
-      "img": "Textured_Woven_Blanket_in_natural1.png"
+      "img": "Textured_Woven_Blanket_in_natural1.webp"
     }
   },
   {
@@ -141,7 +141,7 @@
       "price": 32.99,
       "category": 1,
       "ratings": 5,
-      "img": "Soft_Velvet_Cushion_in_purple1.png"
+      "img": "Soft_Velvet_Cushion_in_purple1.webp"
     }
   },
   {
@@ -154,7 +154,7 @@
       "price": 26.99,
       "category": 2,
       "ratings": 4,
-      "img": "Knitted_Throw_Pillow_in_green1.png"
+      "img": "Knitted_Throw_Pillow_in_green1.webp"
     }
   },
   {
@@ -167,7 +167,7 @@
       "price": 28.99,
       "category": 1,
       "ratings": 4.5,
-      "img": "Quilted_Cushion_in_yellow1.png"
+      "img": "Quilted_Cushion_in_yellow1.webp"
     }
   },
   {
@@ -180,7 +180,7 @@
       "price": 45.99,
       "category": 3,
       "ratings": 4.5,
-      "img": "Fluffy_Throw_Blanket_in_cream1.png"
+      "img": "Fluffy_Throw_Blanket_in_cream1.webp"
     }
   },
   {
@@ -193,7 +193,7 @@
       "price": 29.99,
       "category": 2,
       "ratings": 4.5,
-      "img": "Embroidered_Throw_Pillow_in_red1.png"
+      "img": "Embroidered_Throw_Pillow_in_red1.webp"
     }
   }
 ]
