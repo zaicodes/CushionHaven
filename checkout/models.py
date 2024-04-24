@@ -5,25 +5,21 @@ from django.conf import settings
 from django_countries.fields import CountryField
 from products.models import Product
 from profiles.models import UserProfile
+from django.contrib.auth.models import User
 
 
 class Address(models.Model):
-    country = CountryField(blank_label='Country *',
-                           null=False, blank=False, default="")
-    postcode = models.CharField(
-        max_length=20, null=False, blank=False, default="")
-    town_or_city = models.CharField(
-        max_length=40, null=False, blank=False, default="")
-    street_address1 = models.CharField(
-        max_length=80, null=False, blank=False, default="")
-    street_address2 = models.CharField(
-        max_length=80, null=False, blank=False, default="")
-    county = models.CharField(
-        max_length=80, null=False, blank=False, default="")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    country = CountryField(blank_label='Country *', null=False, blank=False)
+    postcode = models.CharField(max_length=20, null=False, blank=False)
+    town_or_city = models.CharField(max_length=40, null=False, blank=False)
+    street_address1 = models.CharField(max_length=80, null=False, blank=False)
+    street_address2 = models.CharField(max_length=80, null=False, blank=False)
+    county = models.CharField(max_length=80, null=True, blank=False)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.street_address1}, {self.city}, {self.country}"
+        return f"{self.street_address1}, {self.town_or_city}, {self.country}"
 
 
 class Order(models.Model):
@@ -53,7 +49,6 @@ class Order(models.Model):
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(
         max_length=254, null=False, blank=False, default='')
-    print(Address)
 
     def _generate_order_number(self):
         """

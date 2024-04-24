@@ -12,13 +12,14 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from .forms import OrderForm, AddressForm
 from .models import Order, OrderLineItem, Address
-
 from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.contexts import bag_contents
 import stripe
 import json
+from django.urls import reverse_lazy
+from django.views.generic import DeleteView
 
 
 @require_POST
@@ -143,7 +144,9 @@ def checkout(request):
     }
     if request.user.is_authenticated:
         try:
+
             profile = UserProfile.objects.get(user=request.user)
+            user_addresses = Address.objects.filter(user_id=request.user.id)
             order_form = OrderForm(initial={
                 'full_name': profile.user.get_full_name(),
                 'email': profile.user.email,
@@ -159,6 +162,7 @@ def checkout(request):
 
             # Update address_info in context with profile data
             context['address_info'].update({
+                'user_address': user_addresses,
                 'full_name': profile.user.get_full_name(),
                 'email': profile.user.email,
                 'phone_number': profile.default_phone_number,
@@ -170,8 +174,9 @@ def checkout(request):
                 'county': profile.default_county,
                 'id': profile.id,
 
+
             })
-            print(context)
+            print(f'{context}')
 
         except UserProfile.DoesNotExist:
             order_form = OrderForm()
@@ -185,15 +190,29 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+    user = request.user
 
     if request.user.is_authenticated:
+
+        user_addresses = Address.objects.filter(user_id=request.user.id)
         profile = UserProfile.objects.get(user=request.user)
-        # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
 
-        # Save the user's info
         if save_info:
+
+            address = Address.objects.create(
+                user=user,
+                # user_profile=profile,
+                country=order.country,
+                postcode=order.postcode,
+                town_or_city=order.town_or_city,
+                street_address1=order.street_address1,
+                street_address2=order.street_address2,
+                county=order.county
+            )
+            address.save()
+
             profile_data = {
                 'default_phone_number': order.phone_number,
                 'default_country': order.country,
@@ -234,23 +253,23 @@ def checkout_success(request, order_number):
 
 @login_required
 def display_addresses(request):
-    addresses = Address.objects.filter(user_profile=request.user.userprofile)
-    return render(request, 'your_template.html', {'addresses': addresses})
+    addresses = Address.objects.filter(user_id=request.user.id)
+    return render(request, 'checkout/checkout_success.html', {'addresses': addresses})
 
 
-@login_required
-def delete_address(request, address_id):
-    try:
-        address = Address.objects.filter(pk=address_id, user_profile=(
-            request.user.userprofile).first())
-        if address:
-            address.delete()
-            # Return success message as JSON response
-            return JsonResponse({'message': 'Address deleted successfully.'})
-        else:
-            # Return error message as JSON response
-            return JsonResponse({'message': "You're not authorised"}, status=(
-                400))
-    except UserProfile.DoesNotExist:
-        # Return error message as JSON response
-        return JsonResponse({'message': 'User profile not found.'}, status=400)
+def edit_address(request, address_id):
+    address = get_object_or_404(Address, pk=address_id)
+    if request.method == 'POST':
+        form = AddressForm(request.POST, instance=address)
+        if form.is_valid():
+            form.save()
+            return redirect('checkout')
+    else:
+        form = AddressForm(instance=address)
+    return render(request, 'checkout/edit_address.html', {'form': form})
+
+
+class AddressDeleteView(DeleteView):
+    model = Address
+    success_url = reverse_lazy('checkout')
+    template_name = 'checkout/delete_address.html'

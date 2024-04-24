@@ -3,91 +3,88 @@ const navlinksmain = document.querySelector(".nav_links_main");
 const searchbtn = document.querySelector(".search_btn_navbar");
 const navbar_Search = document.querySelector(".navbar_Search");
 const sm_search_btn = document.querySelector(".sm_search_btn");
-const small_link = document.querySelectorAll(".small_link")
+const small_link = document.querySelectorAll(".small_link");
+
 searchbtn.addEventListener("click", function (e) {
   e.preventDefault();
   navbar_Search.classList.toggle("navbar_Search_show");
   sm_search_btn.classList.toggle("sm_search_btn_show");
 });
 
-////////////
-
-///// menu btn funciotnlaity
 menubtn.addEventListener("click", function () {
   navlinksmain.classList.toggle("navlinks_show");
 });
-small_link.forEach(element => {
-  element.addEventListener("click" , function (){
+
+small_link.forEach(function(element) {
+  element.addEventListener("click", function () {
     navlinksmain.classList.toggle("navlinks_show");
-  })
+  });
 });
 
-// to hide taost 
+document.addEventListener("DOMContentLoaded", function() {
+  var customToast = document.getElementById("customToast");
+  var closeButton = customToast.querySelector(".close");
 
-document.addEventListener('DOMContentLoaded', function() {
-  var customToast = document.getElementById('customToast');
-  var closeButton = customToast.querySelector('.close');
 
-  closeButton.addEventListener('click', function() {
+  closeButton.addEventListener("click", function() {
     var toast = new bootstrap.Toast(customToast);
     toast.hide();
   });
 });
 
-/////////////////// handling the increment and decremetn buttons
-
 function handleEnableDisable(itemId) {
-  var currentValue = parseInt($(`#id_qty_${itemId}`).val());
-  var minusDisabled = currentValue < 2;
-  var plusDisabled = currentValue > 98;
-  $(`#decrement-qty_${itemId}`).prop("disabled", minusDisabled);
-  $(`#increment-qty_${itemId}`).prop("disabled", plusDisabled);
+  var allQtyInputs = document.querySelectorAll(".qty_input");
+  for (let i = 0; i < allQtyInputs.length; i++) {
+    var currentItem = allQtyInputs[i];
+    if (currentItem.dataset.item_id === itemId) {
+      var currentValue = parseInt(currentItem.value);
+      var minusDisabled = currentValue < 2;
+      var plusDisabled = currentValue > 98;
+document.getElementById(`decrement-qty_${itemId}`).disabled = minusDisabled;
+document.getElementById(`increment-qty_${itemId}`).disabled = plusDisabled;
+    }
+  }
 }
 
-
-var allQtyInputs = $(".qty_input");
-for (var i = 0; i < allQtyInputs.length; i++) {
-  var itemId = $(allQtyInputs[i]).data("item_id");
-  handleEnableDisable(itemId);
-}
-
-$(".qty_input").change(function () {
-  var itemId = $(this).data("item_id");
-  handleEnableDisable(itemId);
+var allQtyInputs = document.querySelectorAll(".qty_input");
+allQtyInputs.forEach(function(input) {
+  input.addEventListener("change", function() {
+    var itemId = this.dataset.item_id;
+    handleEnableDisable(itemId);
+  });
 });
 
-// Increment quantity
-$(".increment-qty").click(function (e) {
-  e.preventDefault();
-  var closestInput = $(this).closest(".input-group").find(".qty_input")[0];
-  var currentValue = parseInt($(closestInput).val());
-  $(closestInput).val(currentValue + 1);
-  var itemId = $(this).data("item_id");
-  handleEnableDisable(itemId);
+document.querySelectorAll(".increment-qty").forEach(function(button) {
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+    var closestInput = this.closest(".input-group").querySelector(".qty_input");
+    var currentValue = parseInt(closestInput.value);
+    closestInput.value = currentValue + 1;
+    var itemId = this.dataset.item_id;
+    handleEnableDisable(itemId);
+  });
 });
 
-// Decrement quantity
-$(".decrement-qty").click(function (e) {
-  e.preventDefault();
-  var closestInput = $(this).closest(".input-group").find(".qty_input")[0];
-  var currentValue = parseInt($(closestInput).val());
-  $(closestInput).val(currentValue - 1);
-  var itemId = $(this).data("item_id");
-  handleEnableDisable(itemId);
+document.querySelectorAll(".decrement-qty").forEach(function(button) {
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+    var closestInput = this.closest(".input-group").querySelector(".qty_input");
+    var currentValue = parseInt(closestInput.value);
+    closestInput.value = currentValue - 1;
+    var itemId = this.dataset.item_id;
+    handleEnableDisable(itemId);
+  });
 });
 
-///////////////////// soritng the data
-
-$(document).ready(function () {
-  $("#sort-selector").change(function () {
-    var selector = $(this);
+document.addEventListener("DOMContentLoaded", function () {
+document.getElementById("sort-selector").addEventListener("change",
+     function () {
+    var selector = this;
     var currentUrl = new URL(window.location);
-
-    var selectedVal = selector.val();
-    if (selectedVal != "reset") {
+    var selectedVal = selector.value;
+    if (selectedVal !== "reset") {
       var sort = selectedVal.split("_")[0];
       var direction = selectedVal.split("_")[1];
-
       currentUrl.searchParams.set("sort", sort);
       currentUrl.searchParams.set("direction", direction);
     } else {
@@ -99,13 +96,10 @@ $(document).ready(function () {
   });
 });
 
-////////////////////////upate the code code from bag.html
-
-// Update quantity on click
-$(".update-link").click(function (e) {
-  var form = $(this).prev(".update-form");
-  form.submit();
+document.querySelectorAll(".update-link").forEach(function(link) {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    var form = this.previousElementSibling;
+    form.submit();
+  });
 });
-
-
-// Contact form

@@ -21,7 +21,6 @@
 <section class="home_section_2" id="homesection2">
   <div class="container">
     <h2 class="small_heading text-start">Learn More About Cushion Haven!</h2>
-
     <div class="home_sec_2_flex">
       <div class="home_sec_2_flex_col">
         <div class="home_sec_2_flex_col_img">
@@ -64,16 +63,16 @@
 </section>
 <section id="home_section3" class="home_section_3">
   <div class="container">
-    <di v class="home_Sec_3_flex">
+    <div class="home_Sec_3_flex">
       <div class="home_Sec_3_col_1">
         <p class="boldpara">About me</p>
         <h2 class="heading">I'm a trendy Cushion Designer</h2>
         <p class="bold_para home_Sec_3_bold_para">
-          I'm a designer specializing in cushions, pillows, and blankets, based in London. 
-          My collection features luxurious fabrics, intricate designs, and vibrant colors, 
+          I'm a designer specializing in cushions, pillows, and blankets, based in London.
+          My collection features luxurious fabrics, intricate designs, and vibrant colors,
           creating pieces that elevate home decor with elegance and comfort.
         </p>
-    
+   
       </div>
       <div class="home-sec-3-backimg"></div>
     </div>
@@ -119,7 +118,7 @@
       <div class="home_section_4_grid_col">
         <p class="boldpara">Adaptable!</p>
         <p class="para">
-          With a palette of rich jewel tones, calming neutrals, and playful patterns, our pieces are designed to complement a variety of interior styles, from modern chic to bohemian charm. 
+          With a palette of rich jewel tones, calming neutrals, and playful patterns, our pieces are designed to complement a variety of interior styles, from modern chic to bohemian charm.
         </p>
         <p class="para">
           Whether used as standalone statement pieces or mixed and matched for a layered look, our cushions, pillows, and blankets effortlessly adapt to any decor scheme, adding depth and personality to every room.
@@ -135,7 +134,6 @@
   </div>
 </section>
 <section id="home_section5" class="section_5_home">
-  <div class="container">
     <p class="section_5_heading">Shop by Category!</p>
     <div class="products_grid_home">
       <div class="products_grid_home_col">
@@ -144,9 +142,7 @@
             src="{% static 'images/cushions.jpeg' %}"
             alt="an image of cushions"
           /></a>
-       
         </div>
-       
         <h1 class="small_heading"> <a  href="{% url 'products' %}?category=cushion">CUSHIONS</a></h1>
       </div>
       <div class="products_grid_home_col">
@@ -173,7 +169,6 @@
        
         <h1 class="small_heading"> <a href="{% url 'products' %}?category=pillow">PILLOWS</a></h1>
       </div>
- 
   </div>
 </section>
 <section class="section_6_home" id="homesection6">
@@ -191,7 +186,7 @@
         <div>
           <h1 class="bold_para">ADDRESS</h1>
           <p class="bold_sm_para">
-            98 Ploughley Road, <br/> 
+            98 Ploughley Road, <br/>
             London, <br/> NW9 001
           </p>
         </div>
@@ -210,13 +205,11 @@
             <input type="email" placeholder="Email" />
             <textarea
               placeholder="your message"
-              name=""
-              id=""
               cols="10"
               rows="3"
             ></textarea>
             <div>
-              <a class="underline_btn" type="submit">Let's talk</a>
+              <button class="underline_btn" type="submit">Let's talk</button>
             </div>
           </form>
         </div>
@@ -257,5 +250,4 @@
     </div>
   </div>
 </section>
-
 {% endblock %}

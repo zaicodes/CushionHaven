@@ -40,7 +40,7 @@ class OrderForm(forms.ModelForm):
 class AddressForm(forms.ModelForm):
     class Meta:
         model = Address
-        fields = ['postcode', 'country']
+        fields = ['county', 'postcode', 'country']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -49,6 +49,7 @@ class AddressForm(forms.ModelForm):
             'city': 'City',
             'postcode': 'Postal Code',
             'country': 'Country',
+            'county': 'County',
         }
         for field in self.fields:
             placeholder = placeholders.get(field, '')
