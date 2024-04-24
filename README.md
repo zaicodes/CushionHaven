@@ -2,7 +2,8 @@
  
 Cushion Haven is an eCommerce store crafted with a blend of HTML, CSS, JavaScript, Python (Django), Bootstrap, jQuery, and PostgreSQL database technologies. Features include a user-friendly checkout process, an add-to-cart functionality, and convenient sorting and search features, allowing customers to easily find their desired products.The navbar features intuitive categories for effortless navigation, while the product detail page provides information about each item, ensuring a satisfying shopping experience from start to finish.
 
-![am-i-responsive](https://github.com/zaicodes/CushionHaven/tree/main/documentation/readme/am-i-responsive.png)
+![am-i-responsive](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/am-i-responsive.png)
+
 
 Link to live site: [Cushion-Haven](https://cushionhaven-e17d4f9ff625.herokuapp.com/)
 
@@ -82,7 +83,7 @@ Cushion Haven is a Business to Consumer (B2C) e-commerce platform tailored for i
 
 ### Colour Scheme
 
-![colour-scheme]()
+![colour-scheme](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/colour-scheme.png)
 
 This color scheme combines soft and muted tones (lavender and plum) with a bold accent color (dark cyan) and neutral tones (white and black). The overall effect is a balance of elegance, sophistication, and stability, with a touch of creativity and mystery.
 
