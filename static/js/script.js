@@ -5,12 +5,14 @@ const navbar_Search = document.querySelector(".navbar_Search");
 const sm_search_btn = document.querySelector(".sm_search_btn");
 const small_link = document.querySelectorAll(".small_link");
 
+///search button on mobile and computer 
 searchbtn.addEventListener("click", function (e) {
   e.preventDefault();
   navbar_Search.classList.toggle("navbar_Search_show");
   sm_search_btn.classList.toggle("sm_search_btn_show");
 });
 
+// Menu btn function 
 menubtn.addEventListener("click", function () {
   navlinksmain.classList.toggle("navlinks_show");
 });
@@ -21,6 +23,7 @@ small_link.forEach(function(element) {
   });
 });
 
+// Toasts messages alert 
 document.addEventListener("DOMContentLoaded", function() {
   var customToast = document.getElementById("customToast");
   var closeButton = customToast.querySelector(".close");
@@ -32,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+// Funciton for quantity 
 function handleEnableDisable(itemId) {
   var allQtyInputs = document.querySelectorAll(".qty_input");
   for (let i = 0; i < allQtyInputs.length; i++) {
@@ -54,6 +58,7 @@ allQtyInputs.forEach(function(input) {
   });
 });
 
+// Increasing quantity 
 document.querySelectorAll(".increment-qty").forEach(function(button) {
   button.addEventListener("click", function (e) {
     e.preventDefault();
@@ -65,6 +70,7 @@ document.querySelectorAll(".increment-qty").forEach(function(button) {
   });
 });
 
+// Decreasing quantity 
 document.querySelectorAll(".decrement-qty").forEach(function(button) {
   button.addEventListener("click", function (e) {
     e.preventDefault();
@@ -76,6 +82,7 @@ document.querySelectorAll(".decrement-qty").forEach(function(button) {
   });
 });
 
+//Sort btn 
 document.addEventListener("DOMContentLoaded", function () {
 document.getElementById("sort-selector").addEventListener("change",
      function () {
@@ -96,6 +103,7 @@ document.getElementById("sort-selector").addEventListener("change",
   });
 });
 
+// Update btn 
 document.querySelectorAll(".update-link").forEach(function(link) {
   link.addEventListener("click", function (e) {
     e.preventDefault();

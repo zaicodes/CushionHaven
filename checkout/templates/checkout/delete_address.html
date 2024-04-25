@@ -31,6 +31,7 @@
     <h2>Delete Address</h2>
     <p>Are you sure you want to delete the following address?</p>
     <p>{{ address.country }}</p>
+    {% comment %} used to delete the address in checkout page  {% endcomment %}
     <form action="{% url 'delete_address' address.id %}" method="post">
       {% csrf_token %}
       <button type="submit">Delete</button>

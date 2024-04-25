@@ -4,8 +4,9 @@
     <form
       class="grid_products_details"
       action="{% url 'add_to_bag' product.id %}"
-      method="POST"
-    >
+      method="POST">
+
+      {% comment %} The detail of the product which is selected for buying  {% endcomment %}
       {% csrf_token %}
       <div>
         <a href="{{product.img.url}}" target="_blank">
@@ -16,6 +17,8 @@
           />
         </a>
       </div>
+
+      {% comment %} Name of the product  {% endcomment %}
       <div class="second_col_products_detail">
         <h1 class="small_heading_products heading">{{ product.name }}</h1>
         <p class="price_allproducts heading">$ {{ product.price }} USD</p>
@@ -35,6 +38,8 @@
                   </span>
                 </button>
               </div>
+
+              {% comment %} for changing the quantity of the product  {% endcomment %}
               <input
                 class="form-control qty_input"
                 type="number"
@@ -60,18 +65,20 @@
           </div>
         </div>
 
+        {% comment %} Description of the product  {% endcomment %}
         <p class="allproducts_desc para">{{ product.description }}</p>
         <p class="allproducts_desc para">Rating {{ product.ratings }}</p>
         <div class="addtocart_heart_main">
           <input type="submit" class="main_btn addtocart" value="Add to Bag" />
           <i class="fa-regular fa-heart heart_btn"></i>
-          <!-- <i class="fa-solid fa-heart"></i> -->
         </div>
         <input type="hidden" name="redirect_url" value="{{ request.path }}" />
       </div>
     </form>
   </div>
 </section>
+
+{% comment %} Comment model seciton where user can add comment about the product  {% endcomment %}
 <section class="comment_section container py-5">
   <h2 class="fw-bolder border-bottom fs-1 py-5">Comments</h2>
   <div class="comments">
@@ -89,6 +96,5 @@
     <button class="btn bg-black text-white fs-4" type="submit">Submit</button>
   </form>
 </section>
-
 
 {% endblock %} 

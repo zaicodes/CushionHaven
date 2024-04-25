@@ -188,7 +188,8 @@
                 <span> ${{ grand_total|floatformat:2 }}</span>
               </a>
             </span>
-       
+
+        {% comment %} dropdown for login logout  {% endcomment %}
         <div class="dropdown">
           <button aria-label="login-dropdown" class=" border-0 bg-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="login_btn">
@@ -216,6 +217,7 @@
       </div>
     </header>
 
+    {% comment %} messages  according to the action taking by user  {% endcomment %}
     {% if messages %}
     <div class="message-container">
         {% for message in messages %}
@@ -234,13 +236,7 @@
     </div>
 {% endif %}
 
-    <!-- *********************************** -->
-    <!-- other pages content  -->
-    <!-- ************************************* -->
-
-    <!-- *********************************** -->
     <!-- footer  -->
-    <!-- ********************************** -->
     <div class="content">{% block content %}{% endblock %}</div>
     <footer>
       <div class="container footer_flex">
@@ -267,9 +263,12 @@
         <p>Developed by: <a style="color: darkmagenta;" href="https://github.com/zaicodes"  target="_blank">Zainab Ismail </a> &copy;2024</p>
       </div>
     </footer>
+
     <script src="{% static 'js/script.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+
+      //arrow for products dropdown 
       const arrowhandler = function () {
         document
           .querySelector(".products_right_arrow")
@@ -286,7 +285,6 @@
       const hidedropdown = function () {
         document.querySelector(".products_dropdown").style.display = "none";
       };
-
 
 
       // Remove item and reload on click
@@ -381,8 +379,6 @@ form.addEventListener('submit', function(ev) {
 });
       
     </script>
-
-  
   </body>
 </html>
 
@@ -453,6 +449,7 @@ form.addEventListener('submit', function(ev) {
     };
     var url = '/checkout/cache_checkout_data/';
 
+    //posting address of user 
     $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
@@ -517,6 +514,7 @@ form.addEventListener('submit', function(ev) {
 ></script>
 
 <script type="text/javascript">
+  //Email js for making contact page 
 (function () {
   emailjs.init("YHTCkok7fd_7kaLK-");
 })();

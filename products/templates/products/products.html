@@ -1,11 +1,14 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
 <div class="container">
+  {% comment %} showing products according to the category which is selected by user  {% endcomment %}
   {% for c in current_categories%}
   <a href="{% url 'products' %}?category={{c.name}}">
     <span class="fs-1 fw-bold" style="color: #b0b0b0; text-transform: capitalize;" >{{c.friendly_name}}</span>
   </a>
   {% endfor %}
+
+  {% comment %} sorting the product according to the price or alphabetically  {% endcomment %}
   <div class="sorting_main">
     <select
       id="sort-selector"
@@ -22,6 +25,8 @@
       <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
     </select>
     <p class="products_main_quantity ">
+
+  {% comment %} button for the category page  {% endcomment %}
   {% if search_term or current_categories or current_sorting != 'None_None' %}
   <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
   {% endif %}
@@ -30,6 +35,7 @@
   </div>
 
   <div class="section_2_products_grid">
+  {% comment %} showing the products img according to the search  {% endcomment %}
     {% for product in products %} {% if product.img %}
     <div>
       <div class="allproducts_img">
@@ -40,6 +46,7 @@
         </a>
       </div>
       <div class="allproducts_desc">
+        {% comment %} produt description  {% endcomment %}
         {% if product.category %}
         <p class="products_category">
           <a href="{% url 'products' %}?category={{ product.category}}">
@@ -53,6 +60,7 @@
           <p class="price_alproducts">{{ product.ratings}} Ratings </p>
         </div>
 
+        {% comment %} if user is admin owner of the wesbite he can use edit and delete button  {% endcomment %}
         {% if request.user.is_superuser %}
         <small class="ml-3">
             <a class="fs-3 mx-3" href="{% url 'edit_product' product.id %}">Edit</a> |
@@ -71,6 +79,7 @@
 </div>
 {% endblock %}
 
+{% comment %} javascript for making the smooth scrooling to the top of the page when we click on the button  {% endcomment %}
 {% block postloadjs %}
     {{ block.super }}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

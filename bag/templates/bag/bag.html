@@ -22,6 +22,8 @@
         <p class="allproducts_name d-md-block d-none para">Price</p>
         <p class="allproducts_name d-md-block d-none para">Qty</p>
         <p class="allproducts_name d-md-block d-none para">Subtotal</p>
+        
+        {% comment %} items selected for purchasing   {% endcomment %}
 
         {% for item in bag_items %}
 
@@ -38,10 +40,11 @@
           </strong>
         </p>
 
-
         <p class="allproducts_name para">${{ item.product.price }}</p>
      <div>
         <p class="allproducts_name para">
+
+        {% comment %} form for changing the quantity for ordering the product  {% endcomment %}
           <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
             {% csrf_token %}
             <div class="form-group">
@@ -66,22 +69,19 @@
                             </span>
                         </button>
                     </div>
-                    {% if item.product.has_sizes %}
-                        <input type="hidden" name="product_size" value="{{ item.size }}">
-                    {% endif %}
                 </div>
             </div>
        
         </form>
+        {% comment %} update button for chaning the quantity  {% endcomment %}
         <a class="update-link text-info"><small class="fs-4 px-3">Update</small></a>
         <a class="remove-item text-danger float-right" data-size="{{item.size}}" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small class="fs-4 px-3">Remove</small></a>
 
       </div>
 
       <p class="allproducts_name d-md-block d-none para para">${{ item.product.price | calc_subtotal:item.quantity }}</p>
-
+        {% comment %} the total for the product which is selected  {% endcomment %}
         {% endfor %}
-
 
         <h6 class="allproducts_name m-5 p-5 p-md-0 m-md-0 para">
           <strong class="">Bag Total: ${{ total|floatformat:2 }}</strong>

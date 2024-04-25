@@ -2,10 +2,6 @@
 {% load static %}
 {% load bag_tools %}
 
-{% block page_header %}
-
-{% endblock %}
-
 {% block content %}
     <div class="overlay"></div>
     <div class="container">
@@ -28,6 +24,8 @@
                         <p class="mb-1 mt-0 small fs-3 text-muted">Subtotal</p>
                     </div>
                 </div>
+
+                {% comment %} detail of products for ordering  {% endcomment %}
                 {% for item in bag_items %}
                     <div class="row">
                         <div class="col-3 mb-1">
@@ -57,6 +55,8 @@
                         <p class="my-0 fs-3">Delivery:</p>
                         <p class="my-0 fs-3">Grand Total:</p>
                     </div>
+
+                    {% comment %} total for the order  {% endcomment %}
                     <div class="col-3">
                         <p class="my-0 fs-3">${{ total | floatformat:2 }}</p>
                         <p class="my-0 fs-3">${{ delivery | floatformat:2 }}</p>
@@ -68,6 +68,7 @@
                 <fieldset class="rounded px-3 mb-5">
                     {{ order }}
 
+                    {% comment %} The address model which user can save their addressess  {% endcomment %}
                     <div class="addressbook bg-light p-5">
                         {% if address_info.user_address %}
                             <h1 class="fs-2 my-3">Address book</h1>
@@ -84,6 +85,7 @@
                                             <p class="fs-4">{{ address.county }}</p>  
                                             <p class="fs-4">{{ address.country }}</p>
 
+                                             {% comment %} edit and delete button for the address  {% endcomment %}
                                             <a href="{% url 'edit_address' address.id %}" class="btn bg-white text-info fs-4">Edit</a>
                                             <a href="{% url 'delete_address' address.id %}" onclick="return confirm('Are you sure you want to delete this address?');" class="btn btn-danger">Delete</a>
                                            
@@ -92,7 +94,8 @@
                                 {% endfor %}
                             </div>
                         {% else %}
-                            <p class="fs-5 fw-bold">There is no address you selected</p>
+                            {% comment %} shows when there is no address saved {% endcomment %}
+                            <p class="fs-5 fw-bold">Your address book is empty</p>
                         {% endif %}
                     </div>
                 </fieldset>
@@ -102,6 +105,8 @@
                 <p class="text-muted fs-4">
                     Please fill out the form below to complete your order
                 </p>
+
+                {% comment %} The form where user put information for ordering the product  {% endcomment %}
                 <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
@@ -116,6 +121,8 @@
                         <legend class="fs-3 fw-bold fieldset-label small text-black px-2 w-auto">
                             Delivery
                         </legend>
+
+                        {% comment %} personal information of the user  {% endcomment %}
                         {{ order_form.phone_number | as_crispy_field }}
                         {{ order_form.country | as_crispy_field }}
                         {{ order_form.postcode | as_crispy_field }}
@@ -185,6 +192,7 @@
         </div>
     </div>
     <div>
+        {% comment %} for loading payment animation  {% endcomment %}
         {% csrf_token %}
         <div id="loading-overlay">
             <h1 class="text-light logo-font loading-spinner">

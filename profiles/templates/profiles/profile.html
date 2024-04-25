@@ -25,6 +25,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">
+                {% comment %} for adjusting profile details  {% endcomment %}
                 <p class="text-muted fs-3">Default Delivery Information</p>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
@@ -32,7 +33,9 @@
                     <button class="btn btn-black rounded-0 text-uppercase float-right fs-3 m-3 p-3">Update Information</button>
                 </form>
             </div>
+
             <div class="col-12 col-lg-6">
+                {% comment %} order history of the user{% endcomment %}
                 <p class="text-muted fs-3">Order History</p>
                 <div class="order-history table-responsive">
                     <table class="table table-sm table-borderless">
