@@ -111,27 +111,26 @@ font-size: 16px !important;
   border: none;
   font-family: "Cormorant Garamond", serif;
   font-size: 18px;
-  background-color: #c9afc6;
+  background-color: #7f557a;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.381);
   color: white;
   border-radius: 10px;
 }
 .sm_search_btn {
   position: absolute;
- 
   max-width: 250px;
   padding: 10px 15px;
   outline: none;
   border: none;
   font-family: "Cormorant Garamond", serif;
   font-size: 18px;
-  background-color: #c9afc6;
+  background-color: #7f557a;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.381);
   color: white;
   border-radius: 10px;
 }
 .navbar_Search::placeholder {
-  color: rgb(0, 0, 0) !important;
+  color: rgb(255, 255, 255) !important;
   font-weight: 700;
 }
 .search_btn_navbar {
@@ -155,7 +154,7 @@ font-size: 16px !important;
 /* footer  */
 /* *********************************** */
 footer {
-  background-color: rgb(201, 173, 198);
+  background-color: rgb(122 69 116);
   padding: 50px 0px;
 }
 .footer_flex {
@@ -173,7 +172,7 @@ footer {
   font-family: "Cormorant Garamond", serif;
 }
 .footer_socil_links a {
-  background-color: rgb(201, 137, 195);
+  background-color: rgb(83, 46, 80);
   border-radius: 50%;
   display: inline-block;
   padding: 15px;
@@ -200,7 +199,7 @@ footer {
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 30px;
-  color: #b99bb6;
+  color: rgb(83, 46, 80);
   font-family: Roboto, sans-serif;
 }
 .underline_btn {
@@ -228,7 +227,7 @@ footer {
   font-size: 24px;
   font-family: "Cormorant Garamond", sans-serif;
   font-weight: 400;
-  color: #5f4d5d;
+  color: rgb(83, 46, 80);
   margin-bottom: 40px;
 }
 /* section 7  */
@@ -244,12 +243,12 @@ footer {
 }
 .section-7-about .small_heading {
   font-size: 18px;
-  color: #c9afc6;
+  color: #9a6a94;
   margin: 20px 0px;
 }
 .section-7-about .heading {
   text-align: center;
-  color: #c9afc6;
+  color: rgb(83, 46, 80);
   font-size: 3rem;
 }
 .section-7-about .para {
