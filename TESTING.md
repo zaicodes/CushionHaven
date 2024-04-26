@@ -30,7 +30,12 @@ The website underwent validation using W3C, WC3 CSS, JSHint JavaScript validator
 ### HTML
 
 - HTML W3C Validator Regarding the HTML Validator, it flagged information messages about trailing slashes on void elements, a result of the automatically added /> close tag by Prettier. Manual removal will be addressed in the next file save to rectify this issue. 
-- It also flagged the Django template syntax related which was ignored. other than that, there were no errors found.
+
+![HTML-Validator](https://github.com/zaicodes/CushionHaven/blob/main/documentation/testing/html-validator.png)
+
+- Furthermore, there were two errors indicating a stray script tag. Upon investigation, I couldn't locate any such tag. However, upon rechecking the error, I observed that it was actually appearing in the console. I realized that the script tag is related to the Stripe public key in Python files, which cannot be altered through an HTML file.
+
+
 
 ### CSS
 
@@ -56,7 +61,18 @@ I had to rectify certain issues such as characters exceeding 79 and ensuring tha
 ## Lighthouse
 
 Google's Lighthouse tool was used to test performance, accessibility, SEO, and PWA aspects of the site. 
-The results are as follow:
+The result is as follow:
+
+![lighouse](https://github.com/zaicodes/CushionHaven/blob/main/documentation/testing/lighthouse.png)
+
+- I encountered some issues while using the Lighthouse tool to check the website. These included problems with contrast and slow-loading images. To fix this, I converted the images from PNG to WebP format and adjusted the background colour to better complement the white text. Additionally, I cleaned up redundant code in both the CSS and HTML, which improved the overall performance.
+
+- However, there were a few unresolved issues, such as errors in the console related to core code like Stripe and certain buttons in the toast code. 
+
+![console](https://github.com/zaicodes/CushionHaven/blob/main/documentation/testing/console-error.png)
+
+Fixing these errors could potentially break the functionality, so I decided to leave them as is. Another challenge was enabling text compression, but I couldn't find clear instructions on how to do this after following the provided [link](https://developer.chrome.com/docs/lighthouse/performance/uses-text-compression).
+
 
 ## Responsiveness and Mobile-Friendliness Testing
 

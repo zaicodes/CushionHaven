@@ -144,21 +144,83 @@ Various security measures were implemented for this project:
 
 - Navbar: The navbar is divided into sections for easy navigation. It includes the logo and search bar, website pages, and account and bag icons. It is responsive, featuring a hamburger menu toggle on smaller screens.
 
+
+![navbar](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/navbar.png)
+
+
+![navbar](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/navbar-small.png)
+
+
 - Footer: Also split into sections, the footer includes the logo, website pages, and social links. It is responsive and stacks sections on small screens.
+
+
+![footer](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/footer.png)
+
 
 - Home Page: The home page features a hero section with an image, message, and call-to-action button. It also includes an About section with three parts, each providing information about the designer, collection, and products. Additionally, there's a Contact Us section with contact information and a form.
 
+
+![hero-section](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/hero-section.png)
+
+
+![about-section](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/about-section.png)
+
+
+![about-designer](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/about-designer.png)
+
+
+![about-products](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/about-products.png)
+
+
+![about-categories](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/about-categories.png)
+
+
+![contact-form](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/contact-form.png)
+
+
+![costumer-service](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/costumer-service.png)
+
+
 - Products Page: Displays product images, names, prices, tags, and star ratings. Superusers have the option to update or delete products. It includes a sorting function and shows the number of items on the page.
+
+
+![products](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/products.png)
+
+
 
 - Product Detail Page: Provides detailed information about a selected item, including an image, title, price, description, tags, and quantity selector. Users can add items to their bag and receive a success toast notification. This page also includes comment box where users can leave a comment under the product.
 
+
+![product-detail](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/product-detail.png)
+
+
+![comment-box](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/comment-box.png)
+
+
+
 - Bag Page: Lists all items in the user's bag with images, names, SKUs, prices, quantities, and subtotals. Users can adjust quantities or delete items. It displays bag totals and offers a secure checkout option.
 
-- Checkout Page: Divided into delivery and order summary sections. Users can enter delivery information, with pre-populated details for registered users. It includes payment information and buttons for adjusting the bag or completing the order. Additionally, it containts address book where the user's different addresses will be saved. This is editable and can be deleted too.
+![bag](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/bag.png)
+
+
+
+- Checkout Page: Divided into delivery and order summary sections. Users can enter delivery information, with pre-populated details for registered users. It includes payment information and buttons for adjusting the bag or completing the order. Additionally, it contains address book where the user's different addresses will be saved. This is editable and can be deleted too.
+
+![checkout](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/checkout.png)
+
+
 
 - Checkout Success Page: Displays a summary of the order and notifies users of a confirmation email. It also includes a button to view latest deals and shows a success toast.
 
+
+![checkout-scuccess](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/checkout-scuccess.png)
+
+
+
 - Profile Page: Contains sections for default delivery information and order history. Users can update their inf
+
+![profile](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/profile.png)
+
 
 
 ### Accessibility
@@ -167,7 +229,6 @@ I've been careful while coding to make sure the website is accessible-friendly. 
 
 - I've used semantic HTML.
 - I've included descriptive alt attributes on images.
-- Information is provided for screen readers where icons are used without text.
 - I've made sure there's enough contrast between colours across the site (details on colour choices can be found in the color scheme section).
 
 ### Responsiveness
