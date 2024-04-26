@@ -213,7 +213,7 @@ Various security measures were implemented for this project:
 - Checkout Success Page: Displays a summary of the order and notifies users of a confirmation email. It also includes a button to view latest deals and shows a success toast.
 
 
-![checkout-scuccess](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/checkout-scuccess.png)
+![checkout-success](https://github.com/zaicodes/CushionHaven/blob/main/documentation/readme/checkout-success.png)
 
 
 
