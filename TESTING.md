@@ -21,7 +21,7 @@ Link to README file [README](https://github.com/zaicodes/CushionHaven)
 
 - [Bugs](#Bugs)
   - [Solved Bugs](#Solved-Bugs)
-  - [Known Bugs](#Known-Bugs)
+  - [Unsolved Bugs](#Unsolved-Bugs)
 
 ## Validation Testing
 
@@ -193,7 +193,17 @@ All tests showed that the website is fully responsive and adaptable to different
 
 ### Solved Bugs
 
+- Buttons do not have an accessible name error. This was resolved by adding a title to buttons.
+- Fixed issue with contrast as both background and foreground colours were light. This was fixed by changing the background colour on the page to a darker tone. 
+- Removed unnecessary area-lable attributes as they were showing error on the validator.
+- Removed access JavaScript code and repeated CSS code. 
+- Changed span to div for certain elements as this was showing an error on the validator
+- Updated image file format from .png to .webp to improve the Lighthouse performance result.
+- Fixed issue with the address book as both edit and delete were not functioning, created separate html files to address this.
+- Fixed python code according to pep8 as there were several long lines which were adjusted.
+- Updated buttons on html files on allauth to have larger font size, padding and margin for better visibility.
+- Removed venv. from github files.
 
-### Known Bugs
+### Unsolved Bugs
 
-
+For the unsolved bugs please refer to the HTML validator and Lighthouse results on this page. 
