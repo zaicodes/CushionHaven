@@ -34,12 +34,12 @@
   font-family: Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #b0b0b0;
+  color: #686767;
 }
 .products_category a,
 .products_category i {
   margin-top: 10px;
-  color: #b0b0b0 !important;
+  color: #686767 !important;
   font-size: 18px;
 }
 .sorting_main {
@@ -53,7 +53,7 @@
   color: #5f4d5d;
 }
 .products_main_quantity a {
-  color: #b0b0b0;
+  color: #686767;
   font-size: 22px;
 }
 .sort_dropdown,
