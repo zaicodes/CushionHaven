@@ -10,6 +10,7 @@ nav {
   padding: 20px 0px;
   align-items: center;
   justify-content: space-between;
+  height: 15vh;
 }
 .container {
   max-width: 1200px;
@@ -55,6 +56,10 @@ span {
   font-weight: 400;
   display: inline-block;
 }
+.nav_links a {
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
 .form-text {
 font-size: 16px !important;
 }
@@ -77,7 +82,6 @@ font-size: 16px !important;
 .cart_btn span {
   color: purple;
   font-weight: 900;
-
   height: 20px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
@@ -85,7 +89,7 @@ font-size: 16px !important;
   font-size: 13px;
   position: absolute;
   bottom: -18px;
-  left: 10px;
+  left: -7px;
 }
 .login_btn i {
   color: #016274;
@@ -212,8 +216,8 @@ footer {
   border-bottom: 1px solid white;
 }
 .underline_btn:hover {
-  color: #800080;
-  border-bottom: 1px solid #800080;
+  color: #93d5d1;
+  border-bottom: 1px solid #93d5d1;
 }
 .boldpara {
   font-family: Roboto, sans-serif;
@@ -296,7 +300,6 @@ footer {
 }
 
 .prducts_ratings {
-  /* padding-top: 20px; */
   text-align: center;
 }
 .products_right_arrow {
@@ -310,4 +313,18 @@ footer {
 }
 .show_right_arrow {
   opacity: 1;
+}
+
+/* Putting a line undeneath the navbar to show active page */
+ .active {
+  border-bottom: 5px solid #885f83; 
+  outline-offset: 20px;
+}
+ .cart_btn a{
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+.cart_btn a{
+  padding-top: 0 !important;
+padding-bottom:0  !important;
 }

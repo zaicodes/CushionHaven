@@ -1,12 +1,12 @@
 /* **General Media Query - refer to specific query in the css files**/
 
-@media (max-width: 1100px) {
+@media (max-width: 1180px) {
   .nav_links a,
   .prodcuts_hover {
-    padding: 0 10px;
+    padding: 20px 10px;
     font-size: 22px;
     font-family: "Cormorant Garamond", serif;
-    color: purple;
+    color: #885f83;
     font-weight: 400;
   }
   .navbar_Search_show {

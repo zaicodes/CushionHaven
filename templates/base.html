@@ -39,7 +39,7 @@
 
     <!-- for stripe - placed in base to be able to utilise Stripe's fraud detection accross the site, not just the checkout -->
     <script src="https://js.stripe.com/v3/"></script>
-    
+
     <!-- EmailJS for Contact us form-->
     <script
       type="text/javascript"
@@ -95,9 +95,9 @@
     <header>
       <!-- Navbar for all pages -->
       <div class="container">
-        <nav>
+   <nav>
           <div class="navlogo">
-            <a href="{% url 'home' %}">Cushion Haven</a>
+            <a  href="{% url 'home' %}">Cushion Haven</a>
           </div>
           <div>
             <form method="GET" action="{% url 'products' %}">
@@ -119,18 +119,20 @@
           </div>
           <div class="nav_links">
             <div class="nav_links_main">
-              <a class="small_link" href="{% url 'home' %}">Home</a
-              ><a class="small_link" href="/#homesection2">About me</a>
+              <a class="small_link {% if request.path == '/' %}active{% endif %}" href="{% url 'home' %}">Home</a
+              ><a class="small_link  " href="/#homesection2">About me</a>
 
-              <div class="prodcuts_hover" style="display: inline-block"
 
-                ><a class=" p-0 "
-            
+              <div class="prodcuts_hover "
+
+
+                ><a class="pb-5 small_link productlink {% if request.path == '/products/' %}active{% endif %} "
+           
                   href="{% url 'products' %}"
                 >  Products</a
                 >
                  <i class="fa-solid fa-caret-down  mx-5 mx-md-0 "    
-                  ></i> 
+                  ></i>
                 <ul class="products_dropdown  ">
                   <li class="products_sort">
                     <div
@@ -139,7 +141,6 @@
                       class="prducts_ratings"
                     >
                       products
-                      
                       <ul class="products_dropdown_sorting ">
                         <li>
                           <a
@@ -147,7 +148,6 @@
                             >price</a
                           >
                         </li>
-
                         <li>
                           <a
                             href="{% url 'products' %}?sort=ratings&direction=desc"
@@ -164,27 +164,24 @@
                     </div>
                   </li>
                   <li>
-                    <a href="{% url 'products' %}?category=cushion">cushion</a>
+                    <a href="{% url 'products' %}?category=cushion" area-label="cushion category">cushion</a>
                   </li>
                   <li>
-                    <a href="{% url 'products' %}?category=pillow">pillow</a>
+                    <a href="{% url 'products' %}?category=pillow" area-label="pillow category">pillow</a>
                   </li>
                   <li>
-                    <a href="{% url 'products' %}?category=blanket">blanket</a>
+                    <a href="{% url 'products' %}?category=blanket" area-label="blanket category">blanket</a>
                   </li>
                 </ul>
               </div>
-
               <a class="small_link" href="/#homesection6">Contact me</a>
             </div>
             <span class="cart_btn">
               <a href="{% url 'view_bag' %}"  aria-label="View Bag">
                 <i class="fa-solid fa-cart-shopping"></i>
-
                 <span> ${{ grand_total|floatformat:2 }}</span>
               </a>
             </span>
-
         {% comment %} dropdown for login logout  {% endcomment %}
         <div class="dropdown">
           <button aria-label="login-dropdown" class=" border-0 bg-white dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

@@ -265,3 +265,44 @@
   </div>
 </section>
 {% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
+  <script>
+//Email JS for contact us form
+(function () {
+  emailjs.init("YHTCkok7fd_7kaLK-");
+})();
+document.querySelector(".contact_submit").addEventListener("click" , function (e){
+  e.preventDefault()
+ 
+  var params = {
+    fromName: document.getElementById("fullname").value,
+    emailId: document.getElementById("email_id").value,
+    message: document.getElementById("message").value,
+  };
+
+  const value = document.getElementById("email_id").value;
+  if (value.indexOf("@") === -1) {
+    alert("Please enter a valid email");
+    return;
+  } else {
+    emailjs
+      .send("service_qxmr6gc", "template_47nej3m", params)
+      .then(function (res) {
+        console.log("EmailJS Response:", res);
+        document.querySelector(".popupcontact").classList.remove("hidden")
+        setTimeout(() => {
+    document.querySelector(".popupcontact").classList.add("hidden")
+  }, 5000);
+
+      })
+    document.getElementById("fullname").value = "";
+    document.getElementById("email_id").value = "";
+    document.getElementById("message").value = "";
+  }
+  })
+ 
+  </script>
+{% endblock %}
