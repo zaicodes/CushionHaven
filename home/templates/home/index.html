@@ -203,24 +203,25 @@
       </div>
       <div>
         <div>
-           <p class="fs-3 text-white bg-secondary p-3 mb-3  hidden popupcontact">Your message has been sent.😊 </p>
+          <p class="fs-3 text-white bg-secondary p-3 mb-3  hidden popupcontact">Your message has been sent.😊 </p>
           <h2 class="bold_para">Contact Us</h2>
           <p class="bold_sm_para">
             Drop us your message and I'll get back to you as soon as possible.
           </p>
+          {% comment %} form for submitting the message {% endcomment %}
           <form class="contact_form">
             <div class="name_inputs">
-              <input type="text" placeholder="Firstname" />
+              <input id="fullname" type="text" placeholder="Firstname" />
               <input type="text" placeholder="Lastname" />
             </div>
-            <input type="email" placeholder="Email" />
-            <textarea
+            <input id="email_id" type="email" placeholder="Email" />
+            <textarea id="message"
               placeholder="your message"
               cols="10"
               rows="3"
             ></textarea>
             <div>
-              <button class="underline_btn" type="submit">Let's talk</button>
+              <button class="underline_btn contact_submit"  type="submit">Let's talk</button>
             </div>
           </form>
         </div>
